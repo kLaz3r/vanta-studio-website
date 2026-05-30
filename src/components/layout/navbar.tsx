@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import { Menu, X } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/cn";
@@ -40,10 +41,17 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4">
         <Link
           href="/"
-          className="text-xl font-bold tracking-tight text-vanta-light"
+          className="flex shrink-0"
           onClick={() => setMobileOpen(false)}
         >
-          VANTA<span className="text-vanta-cyan">.</span>
+          <Image
+            src="/logo-gradient.svg"
+            alt="VANTA Studio"
+            width={120}
+            height={40}
+            className="h-8 w-auto md:h-9"
+            priority
+          />
         </Link>
 
         {/* Desktop links */}

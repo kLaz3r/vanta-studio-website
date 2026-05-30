@@ -27,11 +27,14 @@ export function Footer() {
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
           <div>
-            <Link
-              href="/"
-              className="text-xl font-bold tracking-tight text-vanta-light"
-            >
-              VANTA<span className="text-vanta-cyan">.</span>
+            <Link href="/" className="inline-block">
+              <Image
+                src="/logo-white.svg"
+                alt="VANTA Studio"
+                width={120}
+                height={40}
+                className="h-7 w-auto"
+              />
             </Link>
             <p className="mt-3 max-w-xs text-sm leading-relaxed text-vanta-light/60">
               VANTA Studio — Branding, Graphic Design &amp; Comunicare
@@ -91,12 +94,7 @@ export function Footer() {
                   aria-label={label}
                   className="opacity-40 transition-opacity hover:opacity-100"
                 >
-                  <Image
-                    src={src}
-                    alt={label}
-                    width={18}
-                    height={18}
-                  />
+                  <Image src={src} alt={label} width={18} height={18} />
                 </Link>
               ))}
             </div>
