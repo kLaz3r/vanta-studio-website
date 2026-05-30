@@ -1,6 +1,36 @@
 @import "tailwindcss";
+@import "tw-animate-css";
 
 @theme {
-  --font-sans: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif,
-    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-heading: "Google Sans", "Inter", ui-sans-serif, system-ui, sans-serif;
+
+  --color-vanta-dark: #0b0b0d;
+  --color-vanta-gray: #202026;
+  --color-vanta-light: #f5f7fa;
+  --color-vanta-cyan: #22d3ee;
+  --color-vanta-purple: #8b5cf6;
+
+  --radius: 0.625rem;
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: var(--radius);
+  --radius-lg: var(--radius) + 4px;
+}
+
+*,
+*::before,
+*::after {
+  border-color: var(--color-vanta-gray);
+}
+
+html {
+  color-scheme: dark;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-vanta-dark);
+  color: var(--color-vanta-light);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
