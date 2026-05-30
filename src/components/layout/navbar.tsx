@@ -32,9 +32,9 @@ export function Navbar() {
   return (
     <header
       className={cn(
-        "fixed top-0 z-50 w-full transition-colors",
+        "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-vanta-dark/95 backdrop-blur shadow-[0_1px_0_0] shadow-vanta-gray/50"
+          ? "bg-white/[0.02] backdrop-blur-2xl shadow-[0_1px_0_0] border-b border-white/[0.06]"
           : "bg-transparent",
       )}
     >

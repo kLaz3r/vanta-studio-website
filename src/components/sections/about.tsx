@@ -1,11 +1,15 @@
 export function AboutSection() {
   return (
-    <section className="px-6 py-24">
-      <div className="mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
+    <section className="relative overflow-hidden px-6 py-24">
+      <div className="orb-cyan -left-40 top-0 h-96 w-96" />
+      <div className="orb-purple -bottom-40 -right-40 h-80 w-80" />
+
+      <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
         <div>
           <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
-            Design construit pentru comunicare modernă
+            Design construit pentru <span className="gradient-text">comunicare modernă</span>
           </h2>
+          <div className="accent-line" />
           <div className="mt-6 space-y-4 text-base leading-relaxed text-vanta-light/60">
             <p>
               VANTA Studio combină graphic design-ul contemporan cu direcția
@@ -20,8 +24,9 @@ export function AboutSection() {
           </div>
         </div>
 
-        <div className="flex aspect-[4/3] items-center justify-center rounded-lg border border-vanta-gray bg-vanta-gray/30">
-          <p className="text-sm text-vanta-light/20">
+        <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.04] to-vanta-purple/[0.04] backdrop-blur-2xl">
+          <div className="orb-cyan-bright h-48 w-48" />
+          <p className="relative text-sm text-vanta-light/20">
             Creative workspace — imagine
           </p>
         </div>

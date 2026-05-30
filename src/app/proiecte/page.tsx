@@ -20,17 +20,43 @@ const PROJECTS = [
   { category: "Graphic Design", title: "Packaging — Organic Skincare", image: null },
 ];
 
+const CATEGORY_COLORS: Record<string, string> = {
+  Branding: "text-vanta-cyan",
+  "Graphic Design": "text-vanta-purple",
+  "Web Design": "text-vanta-cyan",
+  Motion: "text-vanta-purple",
+};
+
+const PLACEHOLDER_GRADIENTS = [
+  "from-vanta-cyan/5 to-vanta-purple/5",
+  "from-vanta-purple/5 to-vanta-cyan/5",
+  "from-vanta-cyan/5 to-vanta-purple/5",
+  "from-vanta-cyan/5 to-vanta-purple/5",
+  "from-vanta-purple/5 to-vanta-cyan/5",
+  "from-vanta-purple/5 to-vanta-cyan/5",
+  "from-vanta-cyan/5 to-vanta-purple/5",
+  "from-vanta-purple/5 to-vanta-cyan/5",
+  "from-vanta-cyan/5 to-vanta-purple/5",
+];
+
 export default function ProjectsPage() {
   return (
     <div className="pt-20">
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
-          Proiecte
-        </h1>
-        <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-vanta-light/60">
-          O selecție de proiecte de branding, graphic design, web design și
-          motion realizate pentru business-uri moderne.
-        </p>
+      <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
+        <div className="orb-cyan -left-32 -top-32 h-72 w-72" />
+        <div className="orb-purple -right-32 -bottom-32 h-64 w-64" />
+        <div className="relative">
+          <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+            <span className="gradient-text">Proiecte</span>
+          </h1>
+          <div className="mt-3 flex justify-center">
+            <div className="accent-line" />
+          </div>
+          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-vanta-light/60">
+            O selecție de proiecte de branding, graphic design, web design și
+            motion realizate pentru business-uri moderne.
+          </p>
+        </div>
       </section>
 
       {/* Filter bar */}
@@ -39,7 +65,7 @@ export default function ProjectsPage() {
           {CATEGORIES.map((cat) => (
             <button
               key={cat}
-              className="rounded-full border border-vanta-gray px-4 py-1.5 text-sm text-vanta-light/70 transition-colors hover:border-vanta-cyan/50 hover:text-vanta-cyan"
+              className="rounded-xl border border-white/[0.08] bg-white/[0.03] px-5 py-2 text-sm text-vanta-light/70 backdrop-blur-lg transition-all duration-200 hover:border-vanta-cyan/30 hover:bg-white/[0.07] hover:text-vanta-cyan"
             >
               {cat}
             </button>
@@ -50,20 +76,24 @@ export default function ProjectsPage() {
       {/* Grid */}
       <section className="mx-auto max-w-7xl px-6 pb-24">
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-          {PROJECTS.map(({ category, title }) => (
+          {PROJECTS.map(({ category, title }, i) => (
             <div
               key={title}
-              className="group rounded-lg border border-vanta-gray bg-vanta-gray/30 p-4 transition-colors hover:border-vanta-cyan/40"
+              className="group cursor-pointer rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-4 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-white/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.12)]"
             >
-              <div className="mb-4 flex aspect-video items-center justify-center rounded bg-vanta-gray/50">
+              <div
+                className={`mb-4 flex aspect-video items-center justify-center rounded-xl bg-gradient-to-br ${PLACEHOLDER_GRADIENTS[i]}`}
+              >
                 <span className="text-xs text-vanta-light/15">
                   Project image
                 </span>
               </div>
-              <p className="text-xs font-medium uppercase tracking-wider text-vanta-cyan/80">
+              <p
+                className={`text-xs font-medium uppercase tracking-wider ${CATEGORY_COLORS[category] ?? "text-vanta-cyan/80"}`}
+              >
                 {category}
               </p>
-              <h3 className="mt-1 text-base font-semibold text-vanta-light">
+              <h3 className="mt-1 text-base font-semibold text-vanta-light transition-colors group-hover:text-vanta-cyan/90">
                 {title}
               </h3>
             </div>

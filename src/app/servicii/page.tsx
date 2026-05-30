@@ -13,6 +13,7 @@ const SERVICE_BLOCKS = [
     title: "Branding & Identitate Vizuală",
     href: "/branding",
     icon: Palette,
+    iconGradient: "from-vanta-cyan/20 to-vanta-purple/20 text-vanta-cyan",
     description:
       "Construim identități vizuale moderne și sisteme de brand coerente care ajută business-urile să comunice clar și memorabil.",
     deliverables: [
@@ -28,6 +29,7 @@ const SERVICE_BLOCKS = [
     title: "Graphic Design pentru Digital și Print",
     href: "/graphic-design",
     icon: Layout,
+    iconGradient: "from-vanta-purple/20 to-vanta-cyan/20 text-vanta-purple",
     description:
       "Realizăm materiale vizuale pentru online și producție tipografică, adaptate imaginii și nevoilor fiecărui business.",
     deliverables: [
@@ -45,6 +47,7 @@ const SERVICE_BLOCKS = [
     title: "Web Design Modern",
     href: "/web-design",
     icon: Globe,
+    iconGradient: "from-vanta-cyan/20 to-vanta-purple/20 text-vanta-cyan",
     description:
       "Creăm website-uri moderne, rapide și optimizate pentru experiență și conversii.",
     deliverables: [
@@ -59,6 +62,7 @@ const SERVICE_BLOCKS = [
     title: "Motion Design & Video Editing",
     href: "/motion-video",
     icon: Clapperboard,
+    iconGradient: "from-vanta-purple/20 to-vanta-cyan/20 text-vanta-purple",
     description:
       "Conținut vizual modern pentru social media, advertising și prezentare digitală.",
     deliverables: [
@@ -76,46 +80,55 @@ export default function ServicesPage() {
   return (
     <div className="pt-20">
       {/* Intro */}
-      <section className="mx-auto max-w-4xl px-6 py-24 text-center">
-        <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
-          Servicii de Branding, Graphic Design și Comunicare Vizuală
-        </h1>
-        <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-vanta-light/60">
-          VANTA Studio dezvoltă identități vizuale și materiale creative pentru
-          business-uri care vor o imagine modernă și profesionistă. Lucrăm atât
-          pentru mediul digital, cât și pentru materiale pregătite profesional
-          pentru print și producție.
-        </p>
+      <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
+        <div className="orb-cyan -left-32 top-0 h-72 w-72" />
+        <div className="orb-purple -right-32 bottom-0 h-64 w-64" />
+        <div className="relative">
+          <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+            Servicii de Branding, Graphic Design și{" "}
+            <span className="gradient-text">Comunicare Vizuală</span>
+          </h1>
+          <div className="mt-4 flex justify-center">
+            <div className="accent-line" />
+          </div>
+          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-vanta-light/60">
+            VANTA Studio dezvoltă identități vizuale și materiale creative
+            pentru business-uri care vor o imagine modernă și profesionistă.
+            Lucrăm atât pentru mediul digital, cât și pentru materiale
+            pregătite profesional pentru print și producție.
+          </p>
+        </div>
       </section>
 
       {/* Service blocks */}
-      <section className="mx-auto max-w-5xl space-y-20 px-6 pb-24">
+      <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pb-24">
         {SERVICE_BLOCKS.map(
-          ({ title, href, icon: Icon, description, deliverables }) => (
-            <div
-              key={href}
-              className="grid gap-12 md:grid-cols-2 md:items-start"
-            >
+          ({ title, href, icon: Icon, iconGradient, description, deliverables }) => (
+            <div key={href} className="mb-20 grid gap-12 md:grid-cols-2 md:items-start">
               <div>
-                <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-vanta-cyan/10 text-vanta-cyan">
+                <div
+                  className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${iconGradient}`}
+                >
                   <Icon size={20} />
                 </div>
-                <h2 className="text-2xl font-bold text-vanta-light">{title}</h2>
+                <h2 className="text-2xl font-bold text-vanta-light hover:text-vanta-cyan/90 transition-colors">
+                  {title}
+                </h2>
                 <p className="mt-4 text-base leading-relaxed text-vanta-light/60">
                   {description}
                 </p>
                 <Link
                   href={href}
-                  className="mt-4 inline-block text-sm font-medium text-vanta-cyan transition-colors hover:text-vanta-cyan/80"
+                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-vanta-cyan transition-colors hover:text-vanta-purple"
                 >
                   Detalii complete →
                 </Link>
               </div>
-              <div className="rounded-lg border border-vanta-gray bg-vanta-gray/30 p-6">
+              <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.03] to-vanta-purple/[0.03] p-6 backdrop-blur-2xl">
                 <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-vanta-light/40">
                   Ce include
                 </h3>
-                <ul className="list-inside list-disc space-y-1 text-sm text-vanta-light/60">
+                <ul className="list-inside list-disc space-y-1.5 text-sm text-vanta-light/60 marker:text-vanta-cyan/60">
                   {deliverables.map((d) => (
                     <li key={d}>{d}</li>
                   ))}

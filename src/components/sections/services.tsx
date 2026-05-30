@@ -1,68 +1,107 @@
 import Link from "next/link";
 import { Palette, Layout, Globe, Clapperboard } from "lucide-react";
-import { cn } from "~/lib/cn";
 
 const SERVICES = [
   {
-    title: "Branding",
+    title: "Branding & Identitate Vizuală",
     description:
-      "Identități vizuale moderne construite pentru claritate, consistență și recunoaștere.",
-    icon: Palette,
+      "Construim identități vizuale coerente care te diferențiază și comunică profesionalism.",
     href: "/branding",
+    Icon: Palette,
+    gradient: "from-vanta-cyan/20 to-vanta-purple/20",
+    iconColor: "text-vanta-cyan",
   },
   {
     title: "Graphic Design",
     description:
-      "Materiale promoționale și vizuale dezvoltate pentru digital și producție tipografică.",
-    icon: Layout,
+      "Materiale grafice pentru digital și print, adaptate imaginii și nevoilor business-ului tău.",
     href: "/graphic-design",
+    Icon: Layout,
+    gradient: "from-vanta-purple/20 to-vanta-cyan/20",
+    iconColor: "text-vanta-purple",
   },
   {
     title: "Web Design",
     description:
-      "Website-uri moderne, rapide și optimizate pentru experiență și conversii.",
-    icon: Globe,
+      "Website-uri moderne, rapide și optimizate pentru o imagine profesionistă online.",
     href: "/web-design",
+    Icon: Globe,
+    gradient: "from-vanta-cyan/20 to-vanta-purple/20",
+    iconColor: "text-vanta-cyan",
   },
   {
     title: "Motion & Video",
     description:
-      "Conținut vizual și animații pentru social media, advertising și prezentare digitală.",
-    icon: Clapperboard,
+      "Conținut video modern pentru social media, advertising și prezentare digitală.",
     href: "/motion-video",
+    Icon: Clapperboard,
+    gradient: "from-vanta-purple/20 to-vanta-cyan/20",
+    iconColor: "text-vanta-purple",
   },
+];
+
+const HIGHLIGHTS = [
+  "branding & identitate vizuală",
+  "graphic design",
+  "web design",
+  "motion & video",
 ];
 
 export function ServicesSection() {
   return (
-    <section className="px-6 py-24">
-      <div className="mx-auto max-w-7xl">
-        <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
-          Servicii creative pentru business-uri moderne
-        </h2>
-
-        <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-          {SERVICES.map(({ title, description, icon: Icon, href }) => (
-            <Link
-              key={title}
-              href={href}
-              className={cn(
-                "group rounded-lg border border-vanta-gray bg-vanta-gray/40 p-6 transition-colors",
-                "hover:border-vanta-cyan/50 hover:bg-vanta-gray/60",
-              )}
-            >
-              <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-md bg-vanta-cyan/10 text-vanta-cyan">
-                <Icon size={20} />
-              </div>
-              <h3 className="text-lg font-semibold text-vanta-light">
-                {title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-vanta-light/60">
-                {description}
-              </p>
-            </Link>
-          ))}
+    <section className="relative overflow-hidden px-6 py-24">
+      <div className="mx-auto max-w-6xl">
+        <div className="text-center">
+          <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
+            Servicii de{" "}
+            <span className="gradient-text">design și branding</span>
+          </h2>
+          <div className="mt-3 flex justify-center">
+            <div className="accent-line" />
+          </div>
+          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-vanta-light/60">
+            Oferim servicii complete de comunicare vizuală — de la strategie de
+            brand și identitate vizuală, până la materiale gata de print și
+            prezență digitală.
+          </p>
         </div>
+
+        <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
+          {SERVICES.map(
+            ({ title, description, href, gradient, Icon, iconColor }) => (
+              <Link
+                key={title}
+                href={href}
+                className="group rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-white/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]"
+              >
+                <div
+                  className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} ${iconColor}`}
+                >
+                  <Icon size={20} />
+                </div>
+                <h3 className="text-lg font-semibold text-vanta-light transition-colors group-hover:text-vanta-cyan/90">
+                  {title}
+                </h3>
+                <p className="mt-2 text-sm leading-relaxed text-vanta-light/50">
+                  {description}
+                </p>
+              </Link>
+            ),
+          )}
+        </div>
+
+        <p className="mt-12 text-center text-sm leading-relaxed text-vanta-light/40">
+          Serviciile noastre sunt orientate atât spre mediul digital, cât și
+          spre materiale pregătite profesional pentru producție tipografică.
+          &mdash;{" "}
+          {HIGHLIGHTS.map((h, i) => (
+            <span key={h}>
+              {i > 0 && ", "}
+              <span className="text-vanta-cyan/60">{h}</span>
+            </span>
+          ))}
+          .
+        </p>
       </div>
     </section>
   );

@@ -38,15 +38,6 @@ const BUDGETS = [
   { value: "not-sure", label: "Nu știu încă" },
 ];
 
-function fieldClass(error?: string) {
-  return cn(
-    "w-full rounded-md border bg-vanta-gray/30 px-4 py-2.5 text-sm text-vanta-light placeholder:text-vanta-light/30 focus:outline-none focus:ring-1",
-    error
-      ? "border-red-500/50 focus:ring-red-500/50"
-      : "border-vanta-gray focus:ring-vanta-cyan",
-  );
-}
-
 export const ContactFormSection: FC = () => {
   const {
     register,
@@ -86,9 +77,11 @@ export const ContactFormSection: FC = () => {
     <section className="px-6 py-24">
       <div className="mx-auto max-w-xl">
         <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
-          Spune-ne despre proiectul tău
+          Spune-ne despre{" "}
+          <span className="gradient-text">proiectul tău</span>
         </h2>
-        <p className="mt-4 text-base leading-relaxed text-vanta-light/60">
+        <div className="accent-line" />
+        <p className="mt-6 text-base leading-relaxed text-vanta-light/60">
           Completează formularul de mai jos și revenim cu o direcție inițială
           pentru proiectul tău.
         </p>
@@ -110,7 +103,13 @@ export const ContactFormSection: FC = () => {
               id="name"
               type="text"
               placeholder="Numele tău"
-              className={fieldClass(errors.name?.message)}
+              className={cn(
+                "w-full rounded-xl bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light placeholder:text-vanta-light/30 backdrop-blur-lg transition-all duration-200",
+                errors.name
+                  ? "border border-red-500/40 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]"
+                  : "border border-white/[0.08] focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)]",
+                "focus:outline-none",
+              )}
               {...register("name")}
             />
             {errors.name && (
@@ -131,7 +130,13 @@ export const ContactFormSection: FC = () => {
                 id="email"
                 type="email"
                 placeholder="email@exemplu.ro"
-                className={fieldClass(errors.email?.message)}
+                className={cn(
+                  "w-full rounded-xl bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light placeholder:text-vanta-light/30 backdrop-blur-lg transition-all duration-200",
+                  errors.email
+                    ? "border border-red-500/40 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]"
+                    : "border border-white/[0.08] focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)]",
+                  "focus:outline-none",
+                )}
                 {...register("email")}
               />
               {errors.email && (
@@ -151,7 +156,7 @@ export const ContactFormSection: FC = () => {
                 id="phone"
                 type="tel"
                 placeholder="+40 7xx xxx xxx"
-                className={fieldClass()}
+                className="w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light placeholder:text-vanta-light/30 backdrop-blur-lg transition-all duration-200 focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)] focus:outline-none"
                 {...register("phone")}
               />
             </div>
@@ -169,7 +174,7 @@ export const ContactFormSection: FC = () => {
               id="business"
               type="text"
               placeholder="Numele afacerii"
-              className={fieldClass()}
+              className="w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light placeholder:text-vanta-light/30 backdrop-blur-lg transition-all duration-200 focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)] focus:outline-none"
               {...register("business")}
             />
           </div>
@@ -185,11 +190,17 @@ export const ContactFormSection: FC = () => {
               </label>
               <select
                 id="service"
-                className={fieldClass(errors.service?.message)}
+                className={cn(
+                  "w-full rounded-xl bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light backdrop-blur-lg transition-all duration-200",
+                  errors.service
+                    ? "border border-red-500/40 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]"
+                    : "border border-white/[0.08] focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)]",
+                  "focus:outline-none",
+                )}
                 {...register("service")}
               >
                 {SERVICES.map(({ value, label }) => (
-                  <option key={value} value={value}>
+                  <option key={value} value={value} className="bg-vanta-dark">
                     {label}
                   </option>
                 ))}
@@ -209,11 +220,11 @@ export const ContactFormSection: FC = () => {
               </label>
               <select
                 id="budget"
-                className={fieldClass()}
+                className="w-full rounded-xl border border-white/[0.08] bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light backdrop-blur-lg transition-all duration-200 focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)] focus:outline-none"
                 {...register("budget")}
               >
                 {BUDGETS.map(({ value, label }) => (
-                  <option key={value} value={value}>
+                  <option key={value} value={value} className="bg-vanta-dark">
                     {label}
                   </option>
                 ))}
@@ -233,7 +244,13 @@ export const ContactFormSection: FC = () => {
               id="message"
               rows={5}
               placeholder="Descrie proiectul tău..."
-              className={fieldClass(errors.message?.message)}
+              className={cn(
+                "w-full rounded-xl bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light placeholder:text-vanta-light/30 backdrop-blur-lg transition-all duration-200",
+                errors.message
+                  ? "border border-red-500/40 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]"
+                  : "border border-white/[0.08] focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)]",
+                "focus:outline-none resize-none",
+              )}
               {...register("message")}
             />
             {errors.message && (
