@@ -4,7 +4,7 @@ import { FadeInView } from "~/components/ui/fade-in-view";
 
 const SERVICES = [
   {
-    title: "Branding & Identitate Vizuală",
+    title: "Branding & Identitate",
     description:
       "Construim identități vizuale coerente care te diferențiază și comunică profesionalism.",
     href: "/branding",
