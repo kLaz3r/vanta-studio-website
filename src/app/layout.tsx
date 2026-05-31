@@ -4,6 +4,7 @@ import "@fontsource-variable/google-sans/wght.css";
 import { Navbar } from "~/components/layout/navbar";
 import { Footer } from "~/components/layout/footer";
 import { DefaultJsonLd } from "~/components/layout/json-ld";
+import { SiteBackground } from "~/components/layout/site-background";
 import "~/styles/globals.css";
 
 const inter = Inter({
@@ -40,6 +41,7 @@ export default function RootLayout({
     <html lang="ro" className={inter.variable}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <DefaultJsonLd />
+        <SiteBackground />
         <Navbar />
         <main className="flex-1">{children}</main>
         <Footer />

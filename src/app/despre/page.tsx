@@ -46,8 +46,6 @@ export default function AboutPage() {
     <div className="pt-20">
       {/* Studio intro */}
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24">
-        <div className="orb-cyan -left-32 -top-32 h-80 w-80" />
-        <div className="orb-purple -bottom-32 -right-32 h-72 w-72" />
         <FadeInView direction="up">
           <div className="relative">
             <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
@@ -74,7 +72,6 @@ export default function AboutPage() {
 
       {/* Process */}
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pb-24">
-        <div className="orb-cyan right-0 top-1/2 h-64 w-64" />
         <FadeInView direction="up">
           <div className="relative">
             <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
@@ -106,7 +103,6 @@ export default function AboutPage() {
 
       {/* CTA */}
       <section className="relative mx-auto max-w-2xl overflow-hidden px-6 pb-24 text-center">
-        <div className="orb-cyan left-1/2 h-48 w-48" />
         <FadeInView direction="up">
           <div className="relative">
             <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">

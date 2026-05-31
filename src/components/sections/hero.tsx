@@ -6,10 +6,6 @@ import { FadeInView } from "~/components/ui/fade-in-view";
 export function HeroSection() {
   return (
     <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden px-6 pt-24">
-      {/* Decorative orbs */}
-      <div className="orb-cyan -left-32 top-1/4 h-96 w-96" />
-      <div className="orb-purple -right-32 top-1/3 h-80 w-80" />
-
       <div className="relative mx-auto max-w-3xl text-center">
         <FadeInView direction="up" duration={0.8}>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-vanta-light sm:text-5xl md:text-6xl">

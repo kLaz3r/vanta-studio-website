@@ -31,9 +31,6 @@ const IMAGE_PLACEHOLDER_BG = [
 export function PortfolioSection() {
   return (
     <section className="relative overflow-hidden px-6 py-24">
-      <div className="orb-purple -left-32 top-1/3 h-72 w-72" />
-      <div className="orb-cyan -bottom-32 right-0 h-64 w-64" />
-
       <div className="relative mx-auto max-w-7xl">
         <FadeInView direction="up">
           <div className="max-w-xl">

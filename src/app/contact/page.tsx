@@ -13,8 +13,6 @@ export default function ContactPage() {
   return (
     <div className="pt-20">
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 pb-12 pt-16 text-center">
-        <div className="orb-cyan -left-32 -top-32 h-80 w-80" />
-        <div className="orb-purple -right-32 -bottom-32 h-72 w-72" />
         <FadeInView direction="up">
           <div className="relative">
             <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">

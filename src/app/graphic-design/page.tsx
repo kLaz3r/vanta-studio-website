@@ -14,8 +14,6 @@ export default function GraphicDesignPage() {
   return (
     <div className="pt-20">
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24">
-        <div className="orb-purple -left-32 -top-32 h-80 w-80" />
-        <div className="orb-cyan -bottom-32 -right-32 h-64 w-64" />
         <FadeInView direction="up">
           <div className="relative">
             <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-vanta-purple/20 to-vanta-cyan/20 text-vanta-purple">

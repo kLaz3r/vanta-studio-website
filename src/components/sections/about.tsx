@@ -3,9 +3,6 @@ import { FadeInView } from "~/components/ui/fade-in-view";
 export function AboutSection() {
   return (
     <section className="relative overflow-hidden px-6 py-24">
-      <div className="orb-cyan -left-40 top-0 h-96 w-96" />
-      <div className="orb-purple -bottom-40 -right-40 h-80 w-80" />
-
       <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
         <FadeInView direction="up">
           <div>
