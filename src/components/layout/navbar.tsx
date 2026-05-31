@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import Image from "next/image";
+import { motion } from "framer-motion";
 import { Menu, X } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { cn } from "~/lib/cn";
@@ -30,7 +31,10 @@ export function Navbar() {
   }, [mobileOpen]);
 
   return (
-    <header
+    <motion.header
+      initial={{ y: -80, opacity: 0 }}
+      animate={{ y: 0, opacity: 1 }}
+      transition={{ duration: 0.5, ease: [0.25, 0.1, 0.25, 1] }}
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
@@ -116,6 +120,6 @@ export function Navbar() {
           </Button>
         </div>
       </div>
-    </header>
+    </motion.header>
   );
 }

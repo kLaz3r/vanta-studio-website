@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { FadeInView } from "~/components/ui/fade-in-view";
 
 export const metadata: Metadata = {
   title: "Blog",
@@ -59,28 +60,30 @@ export default function BlogPage() {
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
         <div className="orb-cyan -left-32 -top-32 h-72 w-72" />
         <div className="orb-purple -right-32 -bottom-32 h-64 w-64" />
-        <div className="relative">
-          <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
-            <span className="gradient-text">Blog</span>
-          </h1>
-          <div className="mt-3 flex justify-center">
-            <div className="accent-line" />
+        <FadeInView direction="up">
+          <div className="relative">
+            <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+              <span className="gradient-text">Blog</span>
+            </h1>
+            <div className="mt-3 flex justify-center">
+              <div className="accent-line" />
+            </div>
+            <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-vanta-light/60">
+              Resurse și articole despre branding, graphic design, web design și
+              comunicare vizuală pentru business-uri moderne.
+            </p>
           </div>
-          <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-vanta-light/60">
-            Resurse și articole despre branding, graphic design, web design și
-            comunicare vizuală pentru business-uri moderne.
-          </p>
-        </div>
+        </FadeInView>
       </section>
 
       <section className="mx-auto max-w-3xl px-6 pb-24">
         <div className="space-y-4">
-          {ARTICLES.map(({ title, category, slug, gradient }) => (
-            <Link
-              key={title}
-              href={slug}
-              className={`block rounded-2xl border border-white/[0.06] bg-gradient-to-br ${gradient} p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-vanta-cyan/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]`}
-            >
+          {ARTICLES.map(({ title, category, slug, gradient }, i) => (
+            <FadeInView key={title} direction="up" delay={i * 0.08}>
+              <Link
+                href={slug}
+                className={`block rounded-2xl border border-white/[0.06] bg-gradient-to-br ${gradient} p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-vanta-cyan/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]`}
+              >
               <p
                 className={`text-xs font-medium uppercase tracking-wider ${CATEGORY_COLORS[category] ?? "text-vanta-cyan/80"}`}
               >
@@ -90,6 +93,7 @@ export default function BlogPage() {
                 {title}
               </h2>
             </Link>
+            </FadeInView>
           ))}
         </div>
       </section>

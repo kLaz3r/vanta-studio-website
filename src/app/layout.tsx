@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
-import { Inter, Plus_Jakarta_Sans } from "next/font/google";
+import { Inter } from "next/font/google";
+import "@fontsource-variable/google-sans/wght.css";
 import { Navbar } from "~/components/layout/navbar";
 import { Footer } from "~/components/layout/footer";
 import { DefaultJsonLd } from "~/components/layout/json-ld";
@@ -8,11 +9,6 @@ import "~/styles/globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-sans",
-});
-
-const headingFont = Plus_Jakarta_Sans({
-  subsets: ["latin"],
-  variable: "--font-heading",
 });
 
 export const metadata: Metadata = {
@@ -41,7 +37,7 @@ export default function RootLayout({
   children,
 }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ro" className={`${inter.variable} ${headingFont.variable}`}>
+    <html lang="ro" className={inter.variable}>
       <body className="flex min-h-screen flex-col font-sans antialiased">
         <DefaultJsonLd />
         <Navbar />

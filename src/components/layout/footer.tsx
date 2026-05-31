@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { FadeInView } from "~/components/ui/fade-in-view";
 
 const NAV_LINKS = [
   { label: "Home", href: "/" },
@@ -23,6 +24,7 @@ const SOCIAL_LINKS = [
 export function Footer() {
   return (
     <footer className="border-t border-vanta-gray">
+      <FadeInView direction="up">
       <div className="mx-auto max-w-7xl px-6 py-16">
         <div className="grid gap-12 md:grid-cols-3">
           {/* Brand */}
@@ -106,6 +108,7 @@ export function Footer() {
           rezervate.
         </div>
       </div>
+      </FadeInView>
     </footer>
   );
 }

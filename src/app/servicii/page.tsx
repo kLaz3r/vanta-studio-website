@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { Palette, Layout, Globe, Clapperboard } from "lucide-react";
+import { FadeInView } from "~/components/ui/fade-in-view";
 
 export const metadata: Metadata = {
   title: "Servicii",
@@ -83,28 +84,31 @@ export default function ServicesPage() {
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
         <div className="orb-cyan -left-32 top-0 h-72 w-72" />
         <div className="orb-purple -right-32 bottom-0 h-64 w-64" />
-        <div className="relative">
-          <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
-            Servicii de Branding, Graphic Design și{" "}
-            <span className="gradient-text">Comunicare Vizuală</span>
-          </h1>
-          <div className="mt-4 flex justify-center">
-            <div className="accent-line" />
+        <FadeInView direction="up">
+          <div className="relative">
+            <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+              Servicii de Branding, Graphic Design și{" "}
+              <span className="gradient-text">Comunicare Vizuală</span>
+            </h1>
+            <div className="mt-4 flex justify-center">
+              <div className="accent-line" />
+            </div>
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-vanta-light/60">
+              VANTA Studio dezvoltă identități vizuale și materiale creative
+              pentru business-uri care vor o imagine modernă și profesionistă.
+              Lucrăm atât pentru mediul digital, cât și pentru materiale
+              pregătite profesional pentru print și producție.
+            </p>
           </div>
-          <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-vanta-light/60">
-            VANTA Studio dezvoltă identități vizuale și materiale creative
-            pentru business-uri care vor o imagine modernă și profesionistă.
-            Lucrăm atât pentru mediul digital, cât și pentru materiale
-            pregătite profesional pentru print și producție.
-          </p>
-        </div>
+        </FadeInView>
       </section>
 
       {/* Service blocks */}
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pb-24">
         {SERVICE_BLOCKS.map(
-          ({ title, href, icon: Icon, iconGradient, description, deliverables }) => (
-            <div key={href} className="mb-20 grid gap-12 md:grid-cols-2 md:items-start">
+          ({ title, href, icon: Icon, iconGradient, description, deliverables }, i) => (
+            <FadeInView key={href} direction="up" delay={i * 0.15}>
+              <div className="mb-20 grid gap-12 md:grid-cols-2 md:items-start">
               <div>
                 <div
                   className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${iconGradient}`}
@@ -135,6 +139,7 @@ export default function ServicesPage() {
                 </ul>
               </div>
             </div>
+            </FadeInView>
           ),
         )}
       </section>

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { Palette, Layout, Globe, Clapperboard } from "lucide-react";
+import { FadeInView } from "~/components/ui/fade-in-view";
 
 const SERVICES = [
   {
@@ -51,46 +52,50 @@ export function ServicesSection() {
   return (
     <section className="relative overflow-hidden px-6 py-24">
       <div className="mx-auto max-w-6xl">
-        <div className="text-center">
-          <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
-            Servicii de{" "}
-            <span className="gradient-text">design și branding</span>
-          </h2>
-          <div className="mt-3 flex justify-center">
-            <div className="accent-line" />
+        <FadeInView direction="up">
+          <div className="text-center">
+            <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
+              Servicii de{" "}
+              <span className="gradient-text">design și branding</span>
+            </h2>
+            <div className="mt-3 flex justify-center">
+              <div className="accent-line" />
+            </div>
+            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-vanta-light/60">
+              Oferim servicii complete de comunicare vizuală — de la strategie de
+              brand și identitate vizuală, până la materiale gata de print și
+              prezență digitală.
+            </p>
           </div>
-          <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-vanta-light/60">
-            Oferim servicii complete de comunicare vizuală — de la strategie de
-            brand și identitate vizuală, până la materiale gata de print și
-            prezență digitală.
-          </p>
-        </div>
+        </FadeInView>
 
         <div className="mt-16 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
           {SERVICES.map(
-            ({ title, description, href, gradient, Icon, iconColor }) => (
-              <Link
-                key={title}
-                href={href}
-                className="group rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-white/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]"
-              >
-                <div
-                  className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} ${iconColor}`}
+            ({ title, description, href, gradient, Icon, iconColor }, i) => (
+              <FadeInView key={title} direction="up" delay={i * 0.1}>
+                <Link
+                  href={href}
+                  className="group block rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-white/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]"
                 >
-                  <Icon size={20} />
-                </div>
-                <h3 className="text-lg font-semibold text-vanta-light transition-colors group-hover:text-vanta-cyan/90">
-                  {title}
-                </h3>
-                <p className="mt-2 text-sm leading-relaxed text-vanta-light/50">
-                  {description}
-                </p>
-              </Link>
+                  <div
+                    className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} ${iconColor}`}
+                  >
+                    <Icon size={20} />
+                  </div>
+                  <h3 className="text-lg font-semibold text-vanta-light transition-colors group-hover:text-vanta-cyan/90">
+                    {title}
+                  </h3>
+                  <p className="mt-2 text-sm leading-relaxed text-vanta-light/50">
+                    {description}
+                  </p>
+                </Link>
+              </FadeInView>
             ),
           )}
         </div>
 
-        <p className="mt-12 text-center text-sm leading-relaxed text-vanta-light/40">
+        <FadeInView direction="up" delay={0.4}>
+          <p className="mt-12 text-center text-sm leading-relaxed text-vanta-light/40">
           Serviciile noastre sunt orientate atât spre mediul digital, cât și
           spre materiale pregătite profesional pentru producție tipografică.
           &mdash;{" "}
@@ -102,6 +107,7 @@ export function ServicesSection() {
           ))}
           .
         </p>
+        </FadeInView>
       </div>
     </section>
   );
