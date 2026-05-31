@@ -5,8 +5,17 @@ import { FadeInView } from "~/components/ui/fade-in-view";
 
 export function HeroSection() {
   return (
-    <section className="relative flex min-h-[calc(100vh-5rem)] items-center overflow-hidden px-6 pt-24">
-      <div className="relative mx-auto max-w-3xl text-center">
+    <section className="relative flex min-h-screen items-center overflow-hidden px-6 pt-24">
+      <video
+        autoPlay
+        muted
+        loop
+        playsInline
+        className="absolute inset-0 z-0 h-full w-full object-cover opacity-30"
+      >
+        <source src="/hero-vid.mp4" type="video/mp4" />
+      </video>
+      <div className="relative z-10 mx-auto max-w-3xl text-center">
         <FadeInView direction="up" duration={0.8}>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-vanta-light sm:text-5xl md:text-6xl">
             Design modern pentru branduri care{" "}
