@@ -11,7 +11,6 @@ import { cn } from "~/lib/cn";
 const NAV_ITEMS = [
   { label: "Home", href: "/" },
   { label: "Servicii", href: "/servicii" },
-  { label: "Proiecte", href: "/proiecte" },
   { label: "Despre", href: "/despre" },
   { label: "Contact", href: "/contact" },
 ];

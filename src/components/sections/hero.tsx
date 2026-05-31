@@ -19,7 +19,7 @@ export function HeroSection() {
         <FadeInView direction="up" duration={0.8}>
           <h1 className="text-4xl font-bold leading-tight tracking-tight text-vanta-light sm:text-5xl md:text-6xl">
             Design modern pentru branduri care{" "}
-            <span className="gradient-text">vor să se remarce</span>
+            vor să se <span className="gradient-text">remarce</span>
           </h1>
         </FadeInView>
         <FadeInView direction="up" delay={0.15} duration={0.7}>
@@ -37,8 +37,8 @@ export function HeroSection() {
         <FadeInView direction="up" delay={0.45} duration={0.7}>
           <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
             <Button size="lg" asChild>
-              <Link href="/proiecte">
-                Vezi proiectele
+              <Link href="/servicii">
+                Afla mai multe
                 <ArrowRight className="ml-2 h-4 w-4" />
               </Link>
             </Button>
