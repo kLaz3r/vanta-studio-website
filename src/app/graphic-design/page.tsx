@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { ArrowRight, Layout } from "lucide-react";
+import { ArrowRight, Check } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
 
@@ -10,67 +10,190 @@ export const metadata: Metadata = {
     "Servicii de graphic design pentru digital și print. Flyere, afișe, bannere, packaging, reclame digitale și materiale promoționale.",
 };
 
+const COLOR_SWATCHES = [
+  { label: "Dark", color: "#0b0b0d" },
+  { label: "Purple", color: "#8b5cf6" },
+  { label: "Cyan", color: "#22d3ee" },
+  { label: "Light", color: "#f5f7fa" },
+  {
+    label: "Gradient",
+    gradient: "linear-gradient(135deg, #8b5cf6, #22d3ee)",
+  },
+] as const;
+
+const DELIVERABLES = [
+  "Layout principal + variante",
+  "Materiale optimizate per platformă",
+  "Variante multiple de concept",
+  "Direcție vizuală coerentă",
+  "Fișiere pregătite pentru producție",
+] as const;
+
+const STATS = [
+  { number: "500+", label: "materiale livrate" },
+  { number: "50+", label: "campanii" },
+  { number: "3", label: "ani de activitate" },
+] as const;
+
 export default function GraphicDesignPage() {
   return (
     <div className="pt-20">
-      <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24">
-        <FadeInView direction="up">
-          <div className="relative">
-            <div className="from-vanta-purple/20 to-vanta-cyan/20 text-vanta-purple mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br">
-              <Layout size={20} />
-            </div>
-            <h1 className="text-vanta-light text-4xl font-bold tracking-tight sm:text-5xl">
-              Graphic Design pentru{" "}
-              <span className="gradient-text">Digital și Print</span>
-            </h1>
-            <div className="accent-line" />
-            <p className="text-vanta-light/60 mt-6 max-w-2xl text-lg leading-relaxed">
-              Realizăm materiale vizuale pentru online și producție tipografică,
-              adaptate imaginii și nevoilor fiecărui business. Toate materialele
-              sunt livrate în formate optimizate pentru digital și print.
-            </p>
-
-            <div className="mt-12 grid gap-8 sm:grid-cols-2">
-              <FadeInView direction="up" delay={0.15}>
-                <div className="from-vanta-purple/[0.04] to-vanta-cyan/[0.04] rounded-2xl border border-white/[0.06] bg-gradient-to-br p-6 backdrop-blur-2xl">
-                  <h3 className="text-vanta-light text-lg font-semibold">
-                    Exemple de materiale
-                  </h3>
-                  <ul className="text-vanta-light/60 marker:text-vanta-purple/60 mt-4 list-inside list-disc space-y-2 text-sm">
-                    <li>flyere</li>
-                    <li>meniuri</li>
-                    <li>afișe</li>
-                    <li>bannere</li>
-                    <li>packaging</li>
-                    <li>social media visuals</li>
-                    <li>reclame digitale</li>
-                    <li>materiale promoționale</li>
-                  </ul>
-                </div>
-              </FadeInView>
-
-              <FadeInView direction="up" delay={0.3}>
-                <div className="from-vanta-purple/[0.04] to-vanta-cyan/[0.04] flex items-center justify-center rounded-2xl border border-white/[0.06] bg-gradient-to-br backdrop-blur-2xl">
-                  <div className="orb-purple h-32 w-32 scale-[0.4]" />
-                  <p className="text-vanta-light/20 relative text-sm">
-                    Print & digital layouts — imagine
-                  </p>
-                </div>
-              </FadeInView>
-            </div>
-
-            <FadeInView direction="up" delay={0.45}>
-              <div className="mt-12">
-                <Button asChild>
+      <section className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24">
+        <div className="grid items-start gap-12 lg:grid-cols-2">
+          <FadeInView direction="up">
+            <div>
+              <h1 className="text-vanta-light text-4xl font-bold tracking-tight sm:text-5xl">
+                Design grafic care transformă idei în materiale{" "}
+                <span className="gradient-text">de impact</span>
+              </h1>
+              <div className="accent-line" />
+              <p className="text-vanta-light/80 mt-6 max-w-lg text-base leading-relaxed">
+                Realizăm materiale vizuale pentru online și producție
+                tipografică, adaptate imaginii și nevoilor fiecărui business.
+                Livrăm în formate optimizate atât pentru digital, cât și pentru
+                print.
+              </p>
+              <div className="mt-10">
+                <Button
+                  size="lg"
+                  className="shadow-[0_0_24px_rgba(139,92,246,0.12)] hover:shadow-[0_0_32px_rgba(139,92,246,0.2)]"
+                  asChild
+                >
                   <Link href="/contact">
-                    Solicită o ofertă
+                    Hai să discutăm despre proiectul tău
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>
               </div>
-            </FadeInView>
-          </div>
-        </FadeInView>
+            </div>
+          </FadeInView>
+
+          <FadeInView direction="up" delay={0.15}>
+            <div className="group relative mx-auto w-full max-w-md">
+              <div className="from-vanta-purple/[0.05] to-vanta-cyan/[0.05] relative rounded-2xl border border-white/[0.08] bg-gradient-to-br p-6 shadow-[0_20px_60px_rgba(139,92,246,0.08)] backdrop-blur-2xl transition-all duration-300 group-hover:scale-[1.02]">
+                <div className="flex gap-4">
+                  <div className="from-vanta-purple/[0.08] to-vanta-cyan/[0.08] flex-1 overflow-hidden rounded-xl border border-white/[0.06] bg-gradient-to-br p-4">
+                    <div className="from-vanta-purple/[0.15] to-vanta-cyan/[0.15] flex aspect-[3/4] flex-col items-center justify-center gap-2 rounded-lg bg-gradient-to-br p-4">
+                      <div className="h-1.5 w-14 rounded-full bg-white/20" />
+                      <div className="h-1.5 w-10 rounded-full bg-white/20" />
+                      <div className="mt-1 h-16 w-full max-w-[5rem] rounded-lg border border-white/10 bg-vanta-purple/20" />
+                      <div className="h-1 rounded-full bg-white/10" />
+                      <div className="h-1 w-12 rounded-full bg-white/10" />
+                      <div className="h-1 w-14 rounded-full bg-white/10" />
+                    </div>
+                  </div>
+                  <div className="from-vanta-purple/[0.08] to-vanta-cyan/[0.08] flex-1 overflow-hidden rounded-xl border border-white/[0.06] bg-gradient-to-br p-4">
+                    <div className="from-vanta-purple/[0.15] to-vanta-cyan/[0.15] flex aspect-[9/16] flex-col items-center justify-center gap-2 rounded-lg bg-gradient-to-br p-4">
+                      <div className="flex w-full items-center gap-2">
+                        <div className="h-5 w-5 rounded-full bg-white/20" />
+                        <div className="h-1.5 w-12 rounded-full bg-white/20" />
+                      </div>
+                      <div className="mt-1 flex-1 w-full rounded-lg border border-white/10 bg-vanta-cyan/20" />
+                      <div className="flex w-full items-center justify-between">
+                        <div className="h-1 w-8 rounded-full bg-white/10" />
+                        <div className="h-1 w-8 rounded-full bg-white/10" />
+                        <div className="h-1 w-8 rounded-full bg-white/10" />
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <div className="text-vanta-light/50 mb-2 text-xs tracking-wider uppercase">
+                    Paletă cromatică
+                  </div>
+                  <div className="flex gap-2">
+                    {COLOR_SWATCHES.map((swatch, i) => (
+                      <div
+                        key={i}
+                        className="h-8 w-8 rounded-full border border-white/[0.08] transition-transform duration-200 hover:scale-110"
+                        style={{
+                          background:
+                            "gradient" in swatch
+                              ? swatch.gradient
+                              : swatch.color,
+                        }}
+                        title={swatch.label}
+                      />
+                    ))}
+                  </div>
+                </div>
+
+                <div className="mt-4">
+                  <div className="text-vanta-light/50 mb-2 text-xs tracking-wider uppercase">
+                    Aplicații
+                  </div>
+                  <div className="grid grid-cols-2 gap-2">
+                    <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-3 text-center">
+                      <div className="text-vanta-light/40 text-xs">Print</div>
+                      <div className="text-vanta-light mt-0.5 text-sm font-semibold">
+                        Flyere &amp; Afișe
+                      </div>
+                    </div>
+                    <div className="rounded-xl border border-white/[0.06] bg-white/[0.03] p-3 text-center">
+                      <div className="text-vanta-light/40 text-xs">Digital</div>
+                      <div className="text-vanta-light mt-0.5 text-sm font-semibold">
+                        Social &amp; Ads
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div
+                className="orb-purple pointer-events-none absolute -top-20 -right-20 h-40 w-40 select-none"
+                aria-hidden="true"
+              />
+              <div
+                className="orb-cyan pointer-events-none absolute -bottom-20 -left-20 h-40 w-40 select-none"
+                aria-hidden="true"
+              />
+            </div>
+          </FadeInView>
+        </div>
+
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
+          <FadeInView direction="up" delay={0.3}>
+            <div className="from-vanta-purple/[0.04] to-vanta-cyan/[0.04] rounded-2xl border border-white/[0.06] bg-gradient-to-br p-6 backdrop-blur-2xl">
+              <h3 className="text-vanta-light text-lg font-semibold">
+                Ce primești
+              </h3>
+              <div className="mt-4 space-y-3">
+                {DELIVERABLES.map((item) => (
+                  <div
+                    key={item}
+                    className="text-vanta-light/80 flex items-start gap-3 text-sm"
+                  >
+                    <span className="from-vanta-purple/20 to-vanta-cyan/20 mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gradient-to-br">
+                      <Check size={11} className="text-vanta-purple" />
+                    </span>
+                    {item}
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeInView>
+
+          <FadeInView direction="up" delay={0.45}>
+            <div className="from-vanta-purple/[0.04] to-vanta-cyan/[0.04] rounded-2xl border border-white/[0.06] bg-gradient-to-br p-6 backdrop-blur-2xl">
+              <h3 className="text-vanta-light text-lg font-semibold">
+                Rezultate
+              </h3>
+              <div className="mt-4 grid grid-cols-3 gap-4 text-center">
+                {STATS.map(({ number, label }) => (
+                  <div key={label}>
+                    <div className="gradient-text text-2xl font-bold">
+                      {number}
+                    </div>
+                    <div className="text-vanta-light/50 mt-1 text-xs">
+                      {label}
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </FadeInView>
+        </div>
       </section>
     </div>
   );
