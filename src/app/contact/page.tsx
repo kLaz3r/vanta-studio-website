@@ -1,12 +1,12 @@
 import type { Metadata } from "next";
 import { FaqSection } from "~/components/sections/faq";
-import { ContactFormSection } from "~/components/forms/contact-form";
+import { WizardContainer } from "~/components/forms/quote-wizard/wizard-container";
 import { FadeInView } from "~/components/ui/fade-in-view";
 
 export const metadata: Metadata = {
   title: "Contact",
   description:
-    "Ai un proiect în minte? Contactează VANTA Studio pentru branding, graphic design și comunicare vizuală.",
+    "Solicită o ofertă personalizată pentru branding, graphic design și comunicare vizuală. Completează wizard-ul rapid și primești un email pre-completat.",
 };
 
 export default function ContactPage() {
@@ -16,24 +16,22 @@ export default function ContactPage() {
         <FadeInView direction="up">
           <div className="relative">
             <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
-              Întrebări frecvente &amp;{" "}
-              <span className="gradient-text">Contact</span>
+              Solicită o{" "}
+              <span className="gradient-text">ofertă personalizată</span>
             </h1>
             <div className="mt-3 flex justify-center">
               <div className="accent-line" />
             </div>
             <p className="mx-auto mt-6 max-w-xl text-base leading-relaxed text-vanta-light/60">
-              Înainte să începem colaborarea, am răspuns mai jos la câteva dintre
-              cele mai frecvente întrebări. Dacă vrei să discutăm despre proiectul
-              tău, completează formularul de contact.
+              Completează pașii de mai jos și vei primi un email pre-completat
+              pe care îl poți trimite direct. Fără call-uri preliminare — doar
+              informațiile esențiale pentru o ofertă exactă.
             </p>
           </div>
         </FadeInView>
       </section>
+      <WizardContainer />
       <FaqSection />
-      <FadeInView direction="up">
-        <ContactFormSection />
-      </FadeInView>
     </div>
   );
 }
