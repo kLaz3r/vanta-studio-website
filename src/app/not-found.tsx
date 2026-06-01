@@ -7,10 +7,10 @@ export default function NotFound() {
   return (
     <div className="flex min-h-screen flex-col items-center justify-center px-6 text-center">
       <FadeInView direction="up">
-        <h1 className="text-6xl font-bold text-vanta-cyan">404</h1>
+        <h1 className="text-vanta-cyan text-6xl font-bold">404</h1>
       </FadeInView>
       <FadeInView direction="up" delay={0.15}>
-        <p className="mt-4 text-lg text-vanta-light/60">
+        <p className="text-vanta-light/60 mt-4 text-lg">
           Pagina pe care o cauți nu există.
         </p>
       </FadeInView>

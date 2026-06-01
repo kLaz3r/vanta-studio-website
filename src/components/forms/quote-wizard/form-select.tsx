@@ -18,7 +18,7 @@ const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
     <div>
       <label
         htmlFor={id}
-        className="mb-1.5 block text-sm font-medium text-vanta-light/80"
+        className="text-vanta-light/80 mb-1.5 block text-sm font-medium"
       >
         {label}
         {required && <span className="text-vanta-cyan"> *</span>}
@@ -27,7 +27,7 @@ const FormSelect = forwardRef<HTMLSelectElement, FormSelectProps>(
         id={id}
         ref={ref}
         className={cn(
-          "w-full rounded-xl border bg-white/[0.03] px-4 py-2.5 text-sm text-vanta-light backdrop-blur-lg transition-all duration-200 focus:border-vanta-cyan/40 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)] focus:outline-none",
+          "text-vanta-light focus:border-vanta-cyan/40 w-full rounded-xl border bg-white/[0.03] px-4 py-2.5 text-sm backdrop-blur-lg transition-all duration-200 focus:shadow-[0_0_0_3px_rgba(34,211,238,0.1)] focus:outline-none",
           error
             ? "border-red-500/40 shadow-[0_0_0_3px_rgba(239,68,68,0.1)]"
             : "border-white/[0.08]",

@@ -18,7 +18,7 @@ const AccordionItem = forwardRef<
   <AccordionPrimitive.Item
     ref={ref}
     className={cn(
-      "rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 backdrop-blur-xl mb-3 overflow-hidden",
+      "mb-3 overflow-hidden rounded-xl border border-white/[0.06] bg-white/[0.02] px-5 backdrop-blur-xl",
       className,
     )}
     {...props}
@@ -34,13 +34,13 @@ const AccordionTrigger = forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        "flex flex-1 items-center justify-between py-4 text-left text-sm font-medium text-vanta-light transition-colors hover:text-vanta-cyan [&[data-state=open]>svg]:rotate-180",
+        "text-vanta-light hover:text-vanta-cyan flex flex-1 items-center justify-between py-4 text-left text-sm font-medium transition-colors [&[data-state=open]>svg]:rotate-180",
         className,
       )}
       {...props}
     >
       {children}
-      <ChevronDown className="h-4 w-4 shrink-0 text-vanta-light/40 transition-transform duration-200" />
+      <ChevronDown className="text-vanta-light/40 h-4 w-4 shrink-0 transition-transform duration-200" />
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
@@ -52,10 +52,10 @@ const AccordionContent = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className="overflow-hidden text-sm text-vanta-light/60 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down"
+    className="text-vanta-light/60 data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down overflow-hidden text-sm"
     {...props}
   >
-    <div className={cn("pb-4 pt-0", className)}>{children}</div>
+    <div className={cn("pt-0 pb-4", className)}>{children}</div>
   </AccordionPrimitive.Content>
 ));
 AccordionContent.displayName = "AccordionContent";

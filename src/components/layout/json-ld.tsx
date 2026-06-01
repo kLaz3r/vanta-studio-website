@@ -1,4 +1,8 @@
-import { organizationSchema, localBusinessSchema, websiteSchema } from "~/lib/structured-data";
+import {
+  organizationSchema,
+  localBusinessSchema,
+  websiteSchema,
+} from "~/lib/structured-data";
 
 export function JsonLd({ data }: { data: Record<string, unknown> }) {
   return (

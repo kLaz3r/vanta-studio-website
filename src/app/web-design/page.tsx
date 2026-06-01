@@ -16,25 +16,25 @@ export default function WebDesignPage() {
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24">
         <FadeInView direction="up">
           <div className="relative">
-            <div className="mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-vanta-cyan/20 to-vanta-purple/20 text-vanta-cyan">
+            <div className="from-vanta-cyan/20 to-vanta-purple/20 text-vanta-cyan mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br">
               <Globe size={20} />
             </div>
-            <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+            <h1 className="text-vanta-light text-4xl font-bold tracking-tight sm:text-5xl">
               <span className="gradient-text">Web Design</span> Modern
             </h1>
             <div className="accent-line" />
-            <p className="mt-6 max-w-2xl text-lg leading-relaxed text-vanta-light/60">
+            <p className="text-vanta-light/60 mt-6 max-w-2xl text-lg leading-relaxed">
               Creăm website-uri moderne, rapide și optimizate pentru experiență
               și conversii.
             </p>
 
             <div className="mt-12 grid gap-8 sm:grid-cols-2">
               <FadeInView direction="up" delay={0.15}>
-                <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.04] to-vanta-purple/[0.04] p-6 backdrop-blur-2xl">
-                  <h3 className="text-lg font-semibold text-vanta-light">
+                <div className="from-vanta-cyan/[0.04] to-vanta-purple/[0.04] rounded-2xl border border-white/[0.06] bg-gradient-to-br p-6 backdrop-blur-2xl">
+                  <h3 className="text-vanta-light text-lg font-semibold">
                     Focus
                   </h3>
-                  <ul className="mt-4 list-inside list-disc space-y-2 text-sm text-vanta-light/60 marker:text-vanta-cyan/60">
+                  <ul className="text-vanta-light/60 marker:text-vanta-cyan/60 mt-4 list-inside list-disc space-y-2 text-sm">
                     <li>structură clară</li>
                     <li>design contemporan</li>
                     <li>performanță</li>
@@ -45,9 +45,9 @@ export default function WebDesignPage() {
               </FadeInView>
 
               <FadeInView direction="up" delay={0.3}>
-                <div className="flex items-center justify-center rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.04] to-vanta-purple/[0.04] backdrop-blur-2xl">
+                <div className="from-vanta-cyan/[0.04] to-vanta-purple/[0.04] flex items-center justify-center rounded-2xl border border-white/[0.06] bg-gradient-to-br backdrop-blur-2xl">
                   <div className="orb-cyan h-32 w-32 scale-[0.4]" />
-                  <p className="relative text-sm text-vanta-light/20">
+                  <p className="text-vanta-light/20 relative text-sm">
                     Modern website mockups — imagine
                   </p>
                 </div>

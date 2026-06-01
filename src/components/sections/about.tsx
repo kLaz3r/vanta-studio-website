@@ -6,11 +6,12 @@ export function AboutSection() {
       <div className="relative mx-auto grid max-w-7xl gap-12 md:grid-cols-2 md:items-center">
         <FadeInView direction="up">
           <div>
-            <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
-              Design construit pentru <span className="gradient-text">comunicare modernă</span>
+            <h2 className="text-vanta-light text-3xl font-bold tracking-tight sm:text-4xl">
+              Design construit pentru{" "}
+              <span className="gradient-text">comunicare modernă</span>
             </h2>
             <div className="accent-line" />
-            <div className="mt-6 space-y-4 text-base leading-relaxed text-vanta-light/60">
+            <div className="text-vanta-light/60 mt-6 space-y-4 text-base leading-relaxed">
               <p>
                 VANTA Studio combină graphic design-ul contemporan cu direcția
                 digitală modernă pentru a crea branduri clare, coerente și
@@ -26,9 +27,9 @@ export function AboutSection() {
         </FadeInView>
 
         <FadeInView direction="up" delay={0.2}>
-          <div className="relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.04] to-vanta-purple/[0.04] backdrop-blur-2xl">
+          <div className="from-vanta-cyan/[0.04] to-vanta-purple/[0.04] relative flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border border-white/[0.06] bg-gradient-to-br backdrop-blur-2xl">
             <div className="orb-cyan-bright h-48 w-48" />
-            <p className="relative text-sm text-vanta-light/20">
+            <p className="text-vanta-light/20 relative text-sm">
               Creative workspace — imagine
             </p>
           </div>

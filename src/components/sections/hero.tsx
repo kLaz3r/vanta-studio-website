@@ -17,9 +17,9 @@ export function HeroSection() {
       </video>
       <div className="relative z-10 mx-auto max-w-3xl text-center">
         <FadeInView direction="up" duration={0.8}>
-          <h1 className="text-4xl font-bold leading-tight tracking-tight text-vanta-light sm:text-5xl md:text-6xl">
-            Design modern pentru branduri care{" "}
-            vor să se <span className="gradient-text">remarce</span>
+          <h1 className="text-vanta-light text-4xl leading-tight font-bold tracking-tight sm:text-5xl md:text-6xl">
+            Design modern pentru branduri care vor să se{" "}
+            <span className="gradient-text">remarce</span>
           </h1>
         </FadeInView>
         <FadeInView direction="up" delay={0.15} duration={0.7}>
@@ -28,7 +28,7 @@ export function HeroSection() {
           </div>
         </FadeInView>
         <FadeInView direction="up" delay={0.3} duration={0.7}>
-          <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-vanta-light/60">
+          <p className="text-vanta-light/60 mx-auto mt-6 max-w-2xl text-lg leading-relaxed">
             VANTA Studio dezvoltă identități vizuale, materiale publicitare și
             experiențe digitale pentru business-uri care vor o imagine
             profesionistă, atât online cât și offline.
@@ -49,7 +49,7 @@ export function HeroSection() {
         </FadeInView>
 
         <FadeInView direction="up" delay={0.6} duration={0.7}>
-          <p className="mt-12 text-sm text-vanta-light/30">
+          <p className="text-vanta-light/30 mt-12 text-sm">
             Studio creativ independent cu bază în Bacău, disponibil pentru
             colaborări locale și remote.
           </p>

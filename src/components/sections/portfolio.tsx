@@ -4,12 +4,32 @@ import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
 
 const PROJECTS = [
-  { category: "Branding", title: "Identitate vizuală — April Beauty", slug: "#" },
-  { category: "Graphic Design", title: "Materiale promoționale — Craft Bakery", slug: "#" },
-  { category: "Web Design", title: "Website business — Startup Studio", slug: "#" },
+  {
+    category: "Branding",
+    title: "Identitate vizuală — April Beauty",
+    slug: "#",
+  },
+  {
+    category: "Graphic Design",
+    title: "Materiale promoționale — Craft Bakery",
+    slug: "#",
+  },
+  {
+    category: "Web Design",
+    title: "Website business — Startup Studio",
+    slug: "#",
+  },
   { category: "Branding", title: "Logo & Packaging — Urban Coffee", slug: "#" },
-  { category: "Motion", title: "Social Media Reels — Fashion Brand", slug: "#" },
-  { category: "Graphic Design", title: "Sistem vizual — Tech Conference", slug: "#" },
+  {
+    category: "Motion",
+    title: "Social Media Reels — Fashion Brand",
+    slug: "#",
+  },
+  {
+    category: "Graphic Design",
+    title: "Sistem vizual — Tech Conference",
+    slug: "#",
+  },
 ];
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -34,14 +54,14 @@ export function PortfolioSection() {
       <div className="relative mx-auto max-w-7xl">
         <FadeInView direction="up">
           <div className="max-w-xl">
-            <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
+            <h2 className="text-vanta-light text-3xl font-bold tracking-tight sm:text-4xl">
               <span className="gradient-text">Proiecte</span> selectate
             </h2>
             <div className="accent-line" />
           </div>
         </FadeInView>
         <FadeInView direction="up" delay={0.15}>
-          <p className="mt-4 max-w-xl text-base leading-relaxed text-vanta-light/60">
+          <p className="text-vanta-light/60 mt-4 max-w-xl text-base leading-relaxed">
             Fiecare proiect este construit în jurul clarității vizuale,
             funcționalității și unei identități coerente.
           </p>
@@ -52,21 +72,21 @@ export function PortfolioSection() {
             <FadeInView key={title} direction="up" delay={i * 0.08}>
               <Link
                 href={slug}
-                className="group block rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-4 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-vanta-[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.12)]"
+                className="group hover:border-vanta-cyan/25 hover:to-vanta-[0.03] block rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-4 backdrop-blur-2xl transition-all duration-300 hover:from-white/[0.07] hover:shadow-[0_8px_40px_rgba(34,211,238,0.12)]"
               >
                 <div
                   className={`mb-4 flex aspect-video items-center justify-center rounded-xl bg-gradient-to-br ${IMAGE_PLACEHOLDER_BG[i]}`}
                 >
-                  <span className="text-xs text-vanta-light/15">
+                  <span className="text-vanta-light/15 text-xs">
                     Project image
                   </span>
                 </div>
                 <p
-                  className={`text-xs font-medium uppercase tracking-wider ${CATEGORY_COLORS[category] ?? "text-vanta-cyan/80"}`}
+                  className={`text-xs font-medium tracking-wider uppercase ${CATEGORY_COLORS[category] ?? "text-vanta-cyan/80"}`}
                 >
                   {category}
                 </p>
-                <h3 className="mt-1 text-base font-semibold text-vanta-light transition-colors group-hover:text-vanta-cyan/90">
+                <h3 className="text-vanta-light group-hover:text-vanta-cyan/90 mt-1 text-base font-semibold transition-colors">
                   {title}
                 </h3>
               </Link>

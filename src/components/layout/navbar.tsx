@@ -37,7 +37,7 @@ export function Navbar() {
       className={cn(
         "fixed top-0 z-50 w-full transition-all duration-300",
         scrolled
-          ? "bg-white/[0.02] backdrop-blur-2xl shadow-[0_1px_0_0] border-b border-white/[0.06]"
+          ? "border-b border-white/[0.06] bg-white/[0.02] shadow-[0_1px_0_0] backdrop-blur-2xl"
           : "bg-transparent",
       )}
     >
@@ -63,7 +63,7 @@ export function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-sm text-vanta-light/80 transition-colors hover:text-vanta-cyan"
+                className="text-vanta-light/80 hover:text-vanta-cyan text-sm transition-colors"
               >
                 {label}
               </Link>
@@ -81,7 +81,7 @@ export function Navbar() {
         {/* Mobile toggle */}
         <button
           onClick={() => setMobileOpen((prev) => !prev)}
-          className="inline-flex items-center justify-center rounded-md p-2 text-vanta-light transition-colors hover:text-vanta-cyan md:hidden"
+          className="text-vanta-light hover:text-vanta-cyan inline-flex items-center justify-center rounded-md p-2 transition-colors md:hidden"
           aria-label={mobileOpen ? "Închide meniul" : "Deschide meniul"}
         >
           {mobileOpen ? <X size={24} /> : <Menu size={24} />}
@@ -91,7 +91,7 @@ export function Navbar() {
       {/* Mobile sheet */}
       <div
         className={cn(
-          "fixed inset-0 top-0 z-40 flex flex-col bg-vanta-dark px-6 pt-24 transition-transform duration-300 md:hidden",
+          "bg-vanta-dark fixed inset-0 top-0 z-40 flex flex-col px-6 pt-24 transition-transform duration-300 md:hidden",
           mobileOpen ? "translate-x-0" : "translate-x-full",
         )}
       >
@@ -100,7 +100,7 @@ export function Navbar() {
             <li key={href}>
               <Link
                 href={href}
-                className="text-xl font-medium text-vanta-light/80 transition-colors hover:text-vanta-cyan"
+                className="text-vanta-light/80 hover:text-vanta-cyan text-xl font-medium transition-colors"
                 onClick={() => setMobileOpen(false)}
               >
                 {label}

@@ -17,7 +17,8 @@ export function buildMailtoUrl(data: WizardData): string {
   const brandingDetails = [
     data.brandingStatus !== "no" && "\nDetalii branding:",
     data.existingLogo && formatBool(data.existingLogo, "Logo existent"),
-    data.brandGuidelines && formatBool(data.brandGuidelines, "Brand guidelines"),
+    data.brandGuidelines &&
+      formatBool(data.brandGuidelines, "Brand guidelines"),
     data.sourceFiles && formatBool(data.sourceFiles, "Fișiere sursă"),
   ]
     .filter(Boolean)

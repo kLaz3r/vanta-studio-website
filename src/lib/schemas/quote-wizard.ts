@@ -10,7 +10,9 @@ export const contactSchema = z.object({
 });
 
 export const businessSchema = z.object({
-  businessDescription: z.string().min(1, "Descrierea afacerii este obligatorie"),
+  businessDescription: z
+    .string()
+    .min(1, "Descrierea afacerii este obligatorie"),
   industry: z.string().min(1, "Selectează industria"),
   businessAge: z.string().min(1, "Selectează vechimea afacerii"),
 });

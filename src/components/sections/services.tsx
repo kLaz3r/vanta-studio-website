@@ -54,16 +54,16 @@ export function ServicesSection() {
       <div className="mx-auto max-w-6xl">
         <FadeInView direction="up">
           <div className="text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
+            <h2 className="text-vanta-light text-3xl font-bold tracking-tight sm:text-4xl">
               Servicii de{" "}
               <span className="gradient-text">design și branding</span>
             </h2>
             <div className="mt-3 flex justify-center">
               <div className="accent-line" />
             </div>
-            <p className="mx-auto mt-4 max-w-2xl text-base leading-relaxed text-vanta-light/60">
-              Oferim servicii complete de comunicare vizuală — de la strategie de
-              brand și identitate vizuală, până la materiale gata de print și
+            <p className="text-vanta-light/60 mx-auto mt-4 max-w-2xl text-base leading-relaxed">
+              Oferim servicii complete de comunicare vizuală — de la strategie
+              de brand și identitate vizuală, până la materiale gata de print și
               prezență digitală.
             </p>
           </div>
@@ -75,17 +75,17 @@ export function ServicesSection() {
               <FadeInView key={title} direction="up" delay={i * 0.1}>
                 <Link
                   href={href}
-                  className="group block rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-white/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]"
+                  className="group hover:border-vanta-cyan/25 block rounded-2xl border border-white/[0.06] bg-gradient-to-br from-white/[0.04] to-white/[0.01] p-6 backdrop-blur-2xl transition-all duration-300 hover:from-white/[0.07] hover:to-white/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]"
                 >
                   <div
                     className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${gradient} ${iconColor}`}
                   >
                     <Icon size={20} />
                   </div>
-                  <h3 className="text-lg font-semibold text-vanta-light transition-colors group-hover:text-vanta-cyan/90">
+                  <h3 className="text-vanta-light group-hover:text-vanta-cyan/90 text-lg font-semibold transition-colors">
                     {title}
                   </h3>
-                  <p className="mt-2 text-sm leading-relaxed text-vanta-light/50">
+                  <p className="text-vanta-light/50 mt-2 text-sm leading-relaxed">
                     {description}
                   </p>
                 </Link>
@@ -95,18 +95,18 @@ export function ServicesSection() {
         </div>
 
         <FadeInView direction="up" delay={0.4}>
-          <p className="mt-12 text-center text-sm leading-relaxed text-vanta-light/40">
-          Serviciile noastre sunt orientate atât spre mediul digital, cât și
-          spre materiale pregătite profesional pentru producție tipografică.
-          &mdash;{" "}
-          {HIGHLIGHTS.map((h, i) => (
-            <span key={h}>
-              {i > 0 && ", "}
-              <span className="text-vanta-cyan/60">{h}</span>
-            </span>
-          ))}
-          .
-        </p>
+          <p className="text-vanta-light/40 mt-12 text-center text-sm leading-relaxed">
+            Serviciile noastre sunt orientate atât spre mediul digital, cât și
+            spre materiale pregătite profesional pentru producție tipografică.
+            &mdash;{" "}
+            {HIGHLIGHTS.map((h, i) => (
+              <span key={h}>
+                {i > 0 && ", "}
+                <span className="text-vanta-cyan/60">{h}</span>
+              </span>
+            ))}
+            .
+          </p>
         </FadeInView>
       </div>
     </section>

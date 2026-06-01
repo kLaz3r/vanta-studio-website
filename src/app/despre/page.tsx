@@ -48,14 +48,15 @@ export default function AboutPage() {
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24">
         <FadeInView direction="up">
           <div className="relative">
-            <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+            <h1 className="text-vanta-light text-4xl font-bold tracking-tight sm:text-5xl">
               Despre <span className="gradient-text">VANTA Studio</span>
             </h1>
             <div className="accent-line" />
-            <div className="mt-6 space-y-4 text-lg leading-relaxed text-vanta-light/60">
+            <div className="text-vanta-light/60 mt-6 space-y-4 text-lg leading-relaxed">
               <p>
-                VANTA Studio este un studio creativ independent cu bază în Bacău,
-                specializat în branding, graphic design și comunicare vizuală.
+                VANTA Studio este un studio creativ independent cu bază în
+                Bacău, specializat în branding, graphic design și comunicare
+                vizuală.
               </p>
               <p>
                 Construim identități moderne și materiale vizuale pregătite atât
@@ -74,7 +75,7 @@ export default function AboutPage() {
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pb-24">
         <FadeInView direction="up">
           <div className="relative">
-            <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
+            <h2 className="text-vanta-light text-3xl font-bold tracking-tight sm:text-4xl">
               Cum <span className="gradient-text">lucrăm</span>
             </h2>
             <div className="accent-line" />
@@ -84,18 +85,18 @@ export default function AboutPage() {
           {PROCESS_STEPS.map(({ step, title, description, gradient }, i) => (
             <FadeInView key={step} direction="up" delay={i * 0.1}>
               <div
-                className={`rounded-2xl border border-white/[0.06] bg-gradient-to-br ${gradient} p-6 backdrop-blur-2xl transition-all duration-300 hover:border-vanta-cyan/25 hover:from-white/[0.07] hover:to-vanta-cyan/[0.03] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]`}
+                className={`rounded-2xl border border-white/[0.06] bg-gradient-to-br ${gradient} hover:border-vanta-cyan/25 hover:to-vanta-cyan/[0.03] p-6 backdrop-blur-2xl transition-all duration-300 hover:from-white/[0.07] hover:shadow-[0_8px_40px_rgba(34,211,238,0.08)]`}
               >
-              <span className="bg-gradient-to-r from-vanta-cyan to-vanta-purple bg-clip-text text-2xl font-bold text-transparent">
-                {step}
-              </span>
-              <h3 className="mt-2 text-lg font-semibold text-vanta-light">
-                {title}
-              </h3>
-              <p className="mt-2 text-sm leading-relaxed text-vanta-light/60">
-                {description}
-              </p>
-            </div>
+                <span className="from-vanta-cyan to-vanta-purple bg-gradient-to-r bg-clip-text text-2xl font-bold text-transparent">
+                  {step}
+                </span>
+                <h3 className="text-vanta-light mt-2 text-lg font-semibold">
+                  {title}
+                </h3>
+                <p className="text-vanta-light/60 mt-2 text-sm leading-relaxed">
+                  {description}
+                </p>
+              </div>
             </FadeInView>
           ))}
         </div>
@@ -105,13 +106,14 @@ export default function AboutPage() {
       <section className="relative mx-auto max-w-2xl overflow-hidden px-6 pb-24 text-center">
         <FadeInView direction="up">
           <div className="relative">
-            <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
-              Hai să construim <span className="gradient-text">ceva modern</span>.
+            <h2 className="text-vanta-light text-3xl font-bold tracking-tight sm:text-4xl">
+              Hai să construim{" "}
+              <span className="gradient-text">ceva modern</span>.
             </h2>
             <div className="mt-3 flex justify-center">
               <div className="accent-line" />
             </div>
-            <p className="mt-6 text-lg leading-relaxed text-vanta-light/60">
+            <p className="text-vanta-light/60 mt-6 text-lg leading-relaxed">
               Spune-ne ce ai nevoie și revenim cu o direcție clară pentru
               proiectul tău.
             </p>

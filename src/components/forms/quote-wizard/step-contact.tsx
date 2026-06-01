@@ -2,7 +2,10 @@
 
 import { useForm } from "react-hook-form";
 import { zodResolver } from "@hookform/resolvers/zod";
-import { contactSchema, type ContactFormValues } from "~/lib/schemas/quote-wizard";
+import {
+  contactSchema,
+  type ContactFormValues,
+} from "~/lib/schemas/quote-wizard";
 import { FormInput } from "~/components/forms/quote-wizard/form-input";
 
 interface StepContactProps {
@@ -12,7 +15,12 @@ interface StepContactProps {
   isFirst: boolean;
 }
 
-export function StepContact({ onNext, onBack: _, defaultValues, isFirst: _isFirst }: StepContactProps) {
+export function StepContact({
+  onNext,
+  onBack: _,
+  defaultValues,
+  isFirst: _isFirst,
+}: StepContactProps) {
   const {
     register,
     handleSubmit,
@@ -32,9 +40,11 @@ export function StepContact({ onNext, onBack: _, defaultValues, isFirst: _isFirs
   return (
     <form onSubmit={handleSubmit(onNext)} noValidate>
       <div className="mb-8">
-        <h2 className="text-2xl font-bold text-vanta-light">Informații de contact</h2>
-        <p className="mt-1 text-sm text-vanta-light/60">
-            Cum te putem contacta?
+        <h2 className="text-vanta-light text-2xl font-bold">
+          Informații de contact
+        </h2>
+        <p className="text-vanta-light/60 mt-1 text-sm">
+          Cum te putem contacta?
         </p>
         <div className="accent-line" />
       </div>
@@ -101,7 +111,7 @@ export function StepContact({ onNext, onBack: _, defaultValues, isFirst: _isFirs
         <div />
         <button
           type="submit"
-          className="inline-flex h-13 cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r from-vanta-cyan to-vanta-purple px-7 text-base font-medium text-white transition-all duration-300 hover:from-vanta-cyan/90 hover:to-vanta-purple/90 hover:shadow-[0_8px_32px_rgba(34,211,238,0.15)] active:scale-[0.97] select-none"
+          className="from-vanta-cyan to-vanta-purple hover:from-vanta-cyan/90 hover:to-vanta-purple/90 inline-flex h-13 cursor-pointer items-center justify-center rounded-xl bg-gradient-to-r px-7 text-base font-medium text-white transition-all duration-300 select-none hover:shadow-[0_8px_32px_rgba(34,211,238,0.15)] active:scale-[0.97]"
         >
           Continuă
         </button>

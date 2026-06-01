@@ -1,7 +1,12 @@
 "use client";
 
 import { type FC } from "react";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "~/components/ui/accordion";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "~/components/ui/accordion";
 import { FadeInView } from "~/components/ui/fade-in-view";
 
 const FAQ_ITEMS = [
@@ -36,7 +41,7 @@ export const FaqSection: FC = () => (
   <section className="px-6 py-24">
     <FadeInView direction="up">
       <div className="mx-auto max-w-2xl">
-        <h2 className="text-3xl font-bold tracking-tight text-vanta-light sm:text-4xl">
+        <h2 className="text-vanta-light text-3xl font-bold tracking-tight sm:text-4xl">
           Întrebări frecvente
         </h2>
         <div className="mt-8">
