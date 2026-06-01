@@ -76,7 +76,7 @@ export default function GraphicDesignPage() {
                     <div className="from-vanta-purple/[0.15] to-vanta-cyan/[0.15] flex aspect-[3/4] flex-col items-center justify-center gap-2 rounded-lg bg-gradient-to-br p-4">
                       <div className="h-1.5 w-14 rounded-full bg-white/20" />
                       <div className="h-1.5 w-10 rounded-full bg-white/20" />
-                      <div className="mt-1 h-16 w-full max-w-[5rem] rounded-lg border border-white/10 bg-vanta-purple/20" />
+                      <div className="bg-vanta-purple/20 mt-1 h-16 w-full max-w-[5rem] rounded-lg border border-white/10" />
                       <div className="h-1 rounded-full bg-white/10" />
                       <div className="h-1 w-12 rounded-full bg-white/10" />
                       <div className="h-1 w-14 rounded-full bg-white/10" />
@@ -88,7 +88,7 @@ export default function GraphicDesignPage() {
                         <div className="h-5 w-5 rounded-full bg-white/20" />
                         <div className="h-1.5 w-12 rounded-full bg-white/20" />
                       </div>
-                      <div className="mt-1 flex-1 w-full rounded-lg border border-white/10 bg-vanta-cyan/20" />
+                      <div className="bg-vanta-cyan/20 mt-1 w-full flex-1 rounded-lg border border-white/10" />
                       <div className="flex w-full items-center justify-between">
                         <div className="h-1 w-8 rounded-full bg-white/10" />
                         <div className="h-1 w-8 rounded-full bg-white/10" />
