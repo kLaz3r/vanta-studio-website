@@ -72,18 +72,10 @@ export function Footer() {
             <ul className="space-y-2 text-sm text-vanta-light/60">
               <li>
                 <Link
-                  href="mailto:hello@vantastudio.ro"
+                  href="mailto:contact@vantastudio.ro"
                   className="transition-colors hover:text-vanta-cyan"
                 >
-                  hello@vantastudio.ro
-                </Link>
-              </li>
-              <li>
-                <Link
-                  href="tel:+40700000000"
-                  className="transition-colors hover:text-vanta-cyan"
-                >
-                  +40 700 000 000
+                  contact@vantastudio.ro
                 </Link>
               </li>
               <li>Bacău, România</li>
@@ -96,7 +88,7 @@ export function Footer() {
                   aria-label={label}
                   className="opacity-40 transition-opacity hover:opacity-100"
                 >
-                  <Image src={src} alt={label} width={18} height={18} />
+                  <Image src={src} alt={label} width={24} height={24} />
                 </Link>
               ))}
             </div>

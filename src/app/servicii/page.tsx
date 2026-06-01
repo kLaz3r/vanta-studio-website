@@ -102,18 +102,25 @@ export default function ServicesPage() {
       </section>
 
       {/* Service blocks */}
-      <section className="relative mx-auto max-w-5xl overflow-hidden px-6 pb-24">
+      <section className="relative mx-auto max-w-5xl px-6 pb-24">
         {SERVICE_BLOCKS.map(
-          ({ title, href, icon: Icon, iconGradient, description, deliverables }, i) => (
+          ({ title, href, icon: Icon, iconGradient, description, deliverables }, i) => {
+            const iconColor = iconGradient.includes("cyan") ? "#22d3ee" : "#8b5cf6";
+            return (
             <FadeInView key={href} direction="up" delay={i * 0.15}>
-              <div className="mb-20 grid gap-12 md:grid-cols-2 md:items-start">
-              <div>
+              <div className={`mb-20 grid gap-12 md:grid-cols-2 md:items-start ${i % 2 !== 0 ? "[&>:first-child]:md:order-2 [&>:last-child]:md:order-1" : ""}`}>
+              <div className="relative">
+                <Icon
+                  size={260}
+                  className="pointer-events-none absolute -left-4 -top-4 select-none"
+                  style={{ color: iconColor, opacity: 0.025 }}
+                />
                 <div
                   className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${iconGradient}`}
                 >
                   <Icon size={20} />
                 </div>
-                <h2 className="text-2xl font-bold text-vanta-light hover:text-vanta-cyan/90 transition-colors">
+                <h2 className="text-2xl font-bold text-vanta-light transition-colors hover:text-vanta-cyan/90">
                   {title}
                 </h2>
                 <p className="mt-4 text-base leading-relaxed text-vanta-light/60">
@@ -138,8 +145,8 @@ export default function ServicesPage() {
               </div>
             </div>
             </FadeInView>
-          ),
-        )}
+          );
+        })}
       </section>
     </div>
   );

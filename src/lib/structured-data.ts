@@ -5,8 +5,7 @@ export const organizationSchema = {
   "@type": "Organization",
   name: "VANTA Studio",
   url: BASE_URL,
-  email: "hello@vantastudio.ro",
-  telephone: "+40 700 000 000",
+  email: "contact@vantastudio.ro",
   description:
     "Studio creativ independent specializat în branding, graphic design și comunicare vizuală.",
   address: {
