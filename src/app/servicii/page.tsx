@@ -1,7 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { Palette, Layout, Globe, Clapperboard } from "lucide-react";
+import { Palette, Layout, Globe, Clapperboard, Check, ArrowRight } from "lucide-react";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { Button } from "~/components/ui/button";
 
 export const metadata: Metadata = {
   title: "Servicii",
@@ -18,12 +19,12 @@ const SERVICE_BLOCKS = [
     description:
       "Construim identități vizuale moderne și sisteme de brand coerente care ajută business-urile să comunice clar și memorabil.",
     deliverables: [
-      "logo design",
-      "identitate vizuală",
-      "brand guidelines",
-      "direcție vizuală",
-      "sisteme tipografice",
-      "social media identity",
+      "Logo Design",
+      "Identitate Vizuală",
+      "Brand Guidelines",
+      "Direcție Vizuală",
+      "Sisteme Tipografice",
+      "Social Media Identity",
     ],
   },
   {
@@ -34,14 +35,14 @@ const SERVICE_BLOCKS = [
     description:
       "Realizăm materiale vizuale pentru online și producție tipografică, adaptate imaginii și nevoilor fiecărui business.",
     deliverables: [
-      "flyere",
-      "meniuri",
-      "afișe",
-      "bannere",
-      "packaging",
-      "social media visuals",
-      "reclame digitale",
-      "materiale promoționale",
+      "Flyere",
+      "Meniuri",
+      "Afișe",
+      "Bannere",
+      "Packaging",
+      "Social Media Visuals",
+      "Reclame Digitale",
+      "Materiale Promoționale",
     ],
   },
   {
@@ -52,11 +53,11 @@ const SERVICE_BLOCKS = [
     description:
       "Creăm website-uri moderne, rapide și optimizate pentru experiență și conversii.",
     deliverables: [
-      "structură clară",
-      "design contemporan",
-      "performanță",
-      "responsive experience",
-      "imagine profesională",
+      "Structură Clară",
+      "Design Contemporan",
+      "Performanță Optimă",
+      "Responsive Experience",
+      "Imagine Profesională",
     ],
   },
   {
@@ -67,12 +68,12 @@ const SERVICE_BLOCKS = [
     description:
       "Conținut vizual modern pentru social media, advertising și prezentare digitală.",
     deliverables: [
-      "reels",
-      "motion graphics",
-      "social ads",
-      "intro animations",
-      "short-form content",
-      "video editing",
+      "Reels",
+      "Motion Graphics",
+      "Social Ads",
+      "Intro Animations",
+      "Short-Form Content",
+      "Video Editing",
     ],
   },
 ];
@@ -84,18 +85,22 @@ export default function ServicesPage() {
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
         <FadeInView direction="up">
           <div className="relative">
-            <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl">
+            <h1 className="text-4xl font-bold tracking-tight text-vanta-light sm:text-5xl md:text-[3.25rem] md:leading-[1.1]">
               Servicii de Branding, Graphic Design și{" "}
               <span className="gradient-text">Comunicare Vizuală</span>
             </h1>
-            <div className="mt-4 flex justify-center">
+            <div className="mt-6 flex justify-center">
               <div className="accent-line" />
             </div>
-            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-vanta-light/60">
+            <p className="mx-auto mt-6 max-w-2xl text-base leading-relaxed text-vanta-light/80">
               VANTA Studio dezvoltă identități vizuale și materiale creative
               pentru business-uri care vor o imagine modernă și profesionistă.
               Lucrăm atât pentru mediul digital, cât și pentru materiale
               pregătite profesional pentru print și producție.
+            </p>
+            <p className="mx-auto mt-6 max-w-xl text-sm text-vanta-light/50">
+              Peste 30 de identități vizuale livrate — pentru startup-uri,
+              companii tech și branduri premium.
             </p>
           </div>
         </FadeInView>
@@ -110,36 +115,48 @@ export default function ServicesPage() {
             <FadeInView key={href} direction="up" delay={i * 0.15}>
               <div className={`mb-20 grid gap-12 md:grid-cols-2 md:items-start ${i % 2 !== 0 ? "[&>:first-child]:md:order-2 [&>:last-child]:md:order-1" : ""}`}>
               <div className="relative">
-                <Icon
-                  size={260}
+                <div
                   className="pointer-events-none absolute -left-4 -top-4 select-none"
-                  style={{ color: iconColor, opacity: 0.025 }}
-                />
+                  aria-hidden="true"
+                >
+                  <Icon
+                    size={260}
+                    style={{ color: iconColor, opacity: 0.04 }}
+                  />
+                </div>
                 <div
                   className={`mb-4 inline-flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br ${iconGradient}`}
                 >
                   <Icon size={20} />
                 </div>
-                <h2 className="text-2xl font-bold text-vanta-light transition-colors hover:text-vanta-cyan/90">
+                <h2 className="text-2xl font-bold text-vanta-light md:text-3xl">
                   {title}
                 </h2>
-                <p className="mt-4 text-base leading-relaxed text-vanta-light/60">
+                <div className="mt-3 h-px w-12 bg-gradient-to-r from-vanta-cyan/40 to-transparent" />
+                <p className="mt-5 text-base leading-relaxed text-vanta-light/80">
                   {description}
                 </p>
-                <Link
-                  href={href}
-                  className="mt-4 inline-flex items-center gap-1 text-sm font-medium text-vanta-cyan transition-colors hover:text-vanta-purple"
-                >
-                  Detalii complete →
-                </Link>
+                <div className="mt-8">
+                  <Button variant="secondary" size="sm" asChild>
+                    <Link href={href}>
+                      <span className="group inline-flex items-center gap-1">
+                        Vezi serviciul complet
+                        <ArrowRight size={14} className="transition-transform duration-300 group-hover:translate-x-1" />
+                      </span>
+                    </Link>
+                  </Button>
+                </div>
               </div>
-              <div className="rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.03] to-vanta-purple/[0.03] p-6 backdrop-blur-2xl">
-                <h3 className="mb-3 text-sm font-semibold uppercase tracking-wider text-vanta-light/40">
+              <div className="group/card rounded-2xl border border-white/[0.06] bg-gradient-to-br from-vanta-cyan/[0.03] to-vanta-purple/[0.03] p-6 backdrop-blur-2xl transition-all duration-300 hover:border-white/[0.12] hover:bg-white/[0.04] hover:shadow-[0_8px_40px_rgba(34,211,238,0.06)] md:p-8">
+                <h3 className="mb-5 text-sm font-semibold uppercase tracking-wider text-vanta-light/50">
                   Ce include
                 </h3>
-                <ul className="list-inside list-disc space-y-1.5 text-sm text-vanta-light/60 marker:text-vanta-cyan/60">
+                <ul className="grid grid-cols-1 gap-3 md:grid-cols-2">
                   {deliverables.map((d) => (
-                    <li key={d}>{d}</li>
+                    <li key={d} className="flex items-start gap-3 text-sm text-vanta-light/80">
+                      <Check size={14} className="mt-0.5 shrink-0 text-vanta-cyan" />
+                      <span>{d}</span>
+                    </li>
                   ))}
                 </ul>
               </div>
