@@ -60,7 +60,7 @@ export default function BlogPage() {
                   {title}
                 </h2>
                 {excerpt && (
-                  <p className="text-vanta-light/40 mt-2 text-sm leading-relaxed line-clamp-2">
+                  <p className="text-vanta-light/40 mt-2 line-clamp-2 text-sm leading-relaxed">
                     {excerpt}
                   </p>
                 )}
