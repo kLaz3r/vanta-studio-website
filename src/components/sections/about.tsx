@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Pen, Layers, MessageCircle, LifeBuoy } from "lucide-react";
 import { Button } from "~/components/ui/button";
@@ -52,8 +53,14 @@ export function AboutSection() {
               <div className="bg-vanta-cyan/5 absolute top-1/3 left-1/3 h-32 w-32 rounded-full blur-[60px]" />
 
               <div className="relative flex h-full flex-col items-center justify-center gap-6 p-8">
-                <div className="from-vanta-cyan/15 to-vanta-purple/15 flex h-28 w-28 items-center justify-center rounded-2xl border border-white/[0.08] bg-gradient-to-br shadow-[0_0_40px_rgba(34,211,238,0.06)] backdrop-blur-2xl">
-                  <span className="gradient-text text-4xl font-bold">V</span>
+                <div className="from-vanta-cyan/15 to-vanta-purple/15 flex h-28 w-28 items-center justify-center overflow-hidden rounded-2xl border border-white/[0.08] bg-gradient-to-br shadow-[0_0_40px_rgba(34,211,238,0.06)] backdrop-blur-2xl">
+                  <Image
+                    src="/vanta-simple.svg"
+                    alt="VANTA Studio"
+                    width={80}
+                    height={40}
+                    className="h-8 w-auto"
+                  />
                 </div>
 
                 <div className="text-center">

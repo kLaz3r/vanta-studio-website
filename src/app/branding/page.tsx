@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "~/components/ui/button";
@@ -67,8 +68,14 @@ export default function BrandingPage() {
             <div className="group relative mx-auto w-full max-w-md">
               <div className="from-vanta-cyan/[0.05] to-vanta-purple/[0.05] relative rounded-2xl border border-white/[0.08] bg-gradient-to-br p-6 shadow-[0_20px_60px_rgba(34,211,238,0.08)] backdrop-blur-2xl transition-all duration-300 group-hover:scale-[1.02]">
                 <div className="flex items-center gap-3 rounded-xl border border-white/[0.06] bg-white/[0.03] p-3">
-                  <div className="from-vanta-cyan to-vanta-purple flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br text-sm font-bold text-white">
-                    V
+                  <div className="from-vanta-cyan to-vanta-purple flex h-10 w-10 items-center justify-center overflow-hidden rounded-lg bg-gradient-to-br">
+                    <Image
+                      src="/vanta-simple.svg"
+                      alt="VANTA Studio"
+                      width={40}
+                      height={20}
+                      className="h-3.5 w-auto"
+                    />
                   </div>
                   <div>
                     <div className="text-vanta-light text-sm font-semibold">
@@ -118,8 +125,14 @@ export default function BrandingPage() {
                 <div className="from-vanta-cyan/[0.08] to-vanta-purple/[0.08] mt-4 overflow-hidden rounded-xl border border-white/[0.08] bg-gradient-to-br p-4">
                   <div className="from-vanta-cyan/[0.08] to-vanta-purple/[0.08] flex aspect-[1.6/1] items-center justify-center rounded-lg border border-white/[0.04] bg-gradient-to-br">
                     <div className="text-center">
-                      <div className="from-vanta-cyan to-vanta-purple mx-auto flex h-8 w-8 items-center justify-center rounded-md bg-gradient-to-br text-xs font-bold text-white">
-                        V
+                      <div className="from-vanta-cyan to-vanta-purple mx-auto flex h-8 w-8 items-center justify-center overflow-hidden rounded-md bg-gradient-to-br">
+                        <Image
+                          src="/vanta-simple.svg"
+                          alt="VANTA Studio"
+                          width={32}
+                          height={16}
+                          className="h-2.5 w-auto"
+                        />
                       </div>
                       <p className="text-vanta-light/60 mt-1 text-[10px] font-semibold">
                         VANTA STUDIO
