@@ -3,11 +3,22 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Despre",
+  title: "Despre VANTA Studio — Studio Creativ în Bacău",
   description:
-    "VANTA Studio — studio creativ independent cu bază în Bacău, specializat în branding, graphic design și comunicare vizuală.",
+    "Află povestea VANTA Studio. Studio creativ independent din Bacău, specializat în branding, graphic design, web design și comunicare vizuală de peste 3 ani.",
+  openGraph: {
+    title: "Despre VANTA Studio — Studio Creativ în Bacău",
+    description:
+      "Studio creativ independent din Bacău, specializat în branding, graphic design, web design și comunicare vizuală.",
+    url: "https://vantastudio.ro/despre",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/despre",
+  },
 };
 
 const PROCESS_STEPS = [
@@ -42,8 +53,14 @@ const PROCESS_STEPS = [
 ];
 
 export default function AboutPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Despre", url: "/despre" },
+  ]);
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
       {/* Studio intro */}
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24">
         <FadeInView direction="up">
@@ -54,17 +71,20 @@ export default function AboutPage() {
             <div className="accent-line" />
             <div className="text-vanta-light/60 mt-6 space-y-4 text-lg leading-relaxed">
               <p>
-                VANTA Studio este un studio creativ independent cu bază în
-                Bacău, specializat în branding, graphic design și comunicare
-                vizuală.
+                VANTA Studio s-a născut din pasiunea pentru design care chiar
+                funcționează — nu doar arată bine, ci și comunică exact ce
+                trebuie. Suntem un studio independent din Bacău și colaborăm cu
+                business-uri din toată țara.
               </p>
               <p>
-                Construim identități moderne și materiale vizuale pregătite atât
-                pentru mediul digital, cât și pentru producție tipografică.
+                Facem branding, graphic design, web design și conținut video.
+                Tot ce ține de imaginea ta vizuală, într-un singur loc, fără să
+                tot trimiți brief-uri la zece agenții diferite.
               </p>
               <p>
-                Focusul nostru este crearea unei imagini clare, coerente și
-                profesioniste pentru business-uri moderne.
+                Credem în designul simplu, coerent și construit strategic.
+                Fiecare alegere — de la forma unui logo până la structura unui
+                site — are un motiv să existe.
               </p>
             </div>
           </div>
@@ -114,8 +134,8 @@ export default function AboutPage() {
               <div className="accent-line" />
             </div>
             <p className="text-vanta-light/60 mt-6 text-lg leading-relaxed">
-              Spune-ne ce ai nevoie și revenim cu o direcție clară pentru
-              proiectul tău.
+                Spune-ne la ce te gândești și revenim cu o ofertă clară și
+                direcția potrivită pentru proiectul tău.
             </p>
             <div className="mt-8">
               <Button size="lg" asChild>

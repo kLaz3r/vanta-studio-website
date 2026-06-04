@@ -1,7 +1,13 @@
+import type { Metadata } from "next";
 import Link from "next/link";
 import { ArrowLeft } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
+
+export const metadata: Metadata = {
+  title: "404 — Pagina nu a fost găsită",
+  robots: { index: false, follow: false },
+};
 
 export default function NotFound() {
   return (

@@ -14,16 +14,21 @@ const inter = Inter({
 
 export const metadata: Metadata = {
   title: {
-    default: "VANTA Studio | Branding, Graphic Design & Comunicare Vizuală",
+    default:
+      "VANTA Studio | Branding, Graphic Design & Web Design în Bacău",
     template: "%s | VANTA Studio",
   },
   description:
-    "Studio creativ specializat în branding, graphic design și comunicare vizuală. Materiale pregătite pentru digital și print.",
+    "VANTA Studio — studio creativ în Bacău specializat în branding, graphic design, web design și comunicare vizuală. Construim identități și website-uri care transformă vizitatorii în clienți.",
   metadataBase: new URL("https://vantastudio.ro"),
   openGraph: {
     type: "website",
     locale: "ro_RO",
     siteName: "VANTA Studio",
+    title: "VANTA Studio | Branding, Graphic Design & Web Design în Bacău",
+    description:
+      "VANTA Studio — studio creativ în Bacău specializat în branding, graphic design, web design și comunicare vizuală.",
+    url: "https://vantastudio.ro",
   },
   twitter: {
     card: "summary_large_image",
@@ -31,6 +36,9 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro",
   },
 };
 

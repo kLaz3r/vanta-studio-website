@@ -94,14 +94,14 @@ export function AboutSection() {
               </h2>
               <div className="accent-line" />
               <p className="text-vanta-light/80 mt-6 max-w-xl text-base leading-relaxed">
-                VANTA Studio combină graphic design-ul contemporan cu direcția
-                digitală modernă pentru a crea branduri clare, coerente și
-                relevante vizual.
+                Nu facem doar design care arată bine — facem design care
+                comunică. Fiecare alegere vizuală are un scop și contribuie la
+                imaginea pe care business-ul tău o transmite.
               </p>
               <p className="text-vanta-light/60 mt-4 max-w-xl text-base leading-relaxed">
-                De la branding și materiale promoționale până la website-uri și
-                conținut digital, focusul nostru este construirea unei imagini
-                profesioniste și consistente pe toate canalele de comunicare.
+                Colaborăm direct cu tine, fără intermediari. De la logo și
+                identitate până la website și materiale printate, totul este
+                gândit să funcționeze împreună, pe orice canal.
               </p>
               <div className="mt-10">
                 <Button
@@ -110,7 +110,7 @@ export function AboutSection() {
                   asChild
                 >
                   <Link href="/despre">
-                    Află mai multe despre noi
+                    Vezi cum lucrăm
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

@@ -16,9 +16,9 @@ const NAV_LINKS = [
 ];
 
 const SOCIAL_LINKS = [
-  { label: "Instagram", href: "#", src: "/icons/Instagram.svg" },
-  { label: "YouTube", href: "#", src: "/icons/Youtube.svg" },
-  { label: "LinkedIn", href: "#", src: "/icons/Linkedin.svg" },
+  { label: "Instagram", href: "https://instagram.com/vantastudio", src: "/icons/Instagram.svg" },
+  { label: "YouTube", href: "https://youtube.com/@vantastudio", src: "/icons/Youtube.svg" },
+  { label: "LinkedIn", href: "https://linkedin.com/company/vantastudio", src: "/icons/Linkedin.svg" },
 ];
 
 export function Footer() {
@@ -39,9 +39,9 @@ export function Footer() {
                 />
               </Link>
               <p className="text-vanta-light/60 mt-3 max-w-xs text-sm leading-relaxed">
-                VANTA Studio — Branding, Graphic Design &amp; Comunicare
-                Vizuală. Studio creativ independent cu bază în Bacău, disponibil
-                pentru colaborări locale și remote.
+                VANTA Studio — Branding, Graphic Design, Web Design și
+                conținut video. Studio creativ din Bacău, disponibil pentru
+                colaborări în toată țara.
               </p>
             </div>
 

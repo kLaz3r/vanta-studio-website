@@ -3,11 +3,22 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema, serviceSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Motion & Video",
+  title: "Motion Design și Video Editing",
   description:
-    "Motion design și video editing pentru social media, advertising și prezentare digitală. Reels, animații și conținut video.",
+    "Servicii de motion design și video editing: reels, motion graphics, videouri pentru reclame și conținut scurt pentru social media.",
+  openGraph: {
+    title: "Motion Design & Video Editing | VANTA Studio",
+    description:
+      "Reels, motion graphics, videouri pentru reclame și conținut scurt care oprește scrolling-ul.",
+    url: "https://vantastudio.ro/motion-video",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/motion-video",
+  },
 };
 
 const COLOR_SWATCHES = [
@@ -36,8 +47,22 @@ const STATS = [
 ] as const;
 
 export default function MotionVideoPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Servicii", url: "/servicii" },
+    { name: "Motion & Video", url: "/motion-video" },
+  ]);
+
+  const schema = serviceSchema(
+    "Motion Design & Video Editing",
+    "Motion design și video editing pentru social media, advertising și prezentare digitală. Reels, animații și conținut video.",
+    "/motion-video",
+  );
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
+      <JsonLd data={schema} />
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <FadeInView direction="up">
@@ -48,9 +73,9 @@ export default function MotionVideoPage() {
               </h1>
               <div className="accent-line" />
               <p className="text-vanta-light/80 mt-6 max-w-lg text-base leading-relaxed">
-                De la reels și motion graphics până la videouri pentru campanii
-                — producem conținut vizual care oprește scrolling-ul și comunică
-                rapid.
+                În peisajul digital de azi, conținutul video nu mai e o opțiune.
+                Producem reels, motion graphics și clipuri pentru campanii care
+                atrag atenția din primul cadru.
               </p>
               <div className="mt-10">
                 <Button
@@ -59,7 +84,7 @@ export default function MotionVideoPage() {
                   asChild
                 >
                   <Link href="/contact">
-                    Hai să creăm conținutul tău video
+                    Vreau conținut video
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

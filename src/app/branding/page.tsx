@@ -4,11 +4,22 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema, serviceSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Branding & Identitate Vizuală",
+  title: "Branding & Identitate Vizuală în Bacău",
   description:
-    "Servicii de branding și identitate vizuală. Logo design, brand guidelines, direcție vizuală și sisteme tipografice pentru business-uri moderne.",
+    "Servicii de branding și identitate vizuală în Bacău. Logo design, paletă cromatică, brand guidelines și sisteme vizuale complete pentru business-uri care vor să iasă în evidență.",
+  openGraph: {
+    title: "Branding & Identitate Vizuală | VANTA Studio",
+    description:
+      "Servicii de branding și identitate vizuală — logo, paletă cromatică, brand guidelines. Construim identități memorabile pentru business-ul tău.",
+    url: "https://vantastudio.ro/branding",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/branding",
+  },
 };
 
 const COLOR_SWATCHES = [
@@ -34,8 +45,22 @@ const STATS = [
 ] as const;
 
 export default function BrandingPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Servicii", url: "/servicii" },
+    { name: "Branding", url: "/branding" },
+  ]);
+
+  const schema = serviceSchema(
+    "Branding & Identitate Vizuală",
+    "Servicii complete de branding: logo design, identitate vizuală, brand guidelines și sisteme tipografice pentru business-uri moderne.",
+    "/branding",
+  );
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
+      <JsonLd data={schema} />
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <FadeInView direction="up">
@@ -46,8 +71,9 @@ export default function BrandingPage() {
               </h1>
               <div className="accent-line" />
               <p className="text-vanta-light/80 mt-6 max-w-lg text-base leading-relaxed">
-                De la logo și paletă cromatică până la sistem complet de brand —
-                creăm identități care diferențiază și comunică profesional.
+                Un brand puternic nu înseamnă doar un logo frumos. Înseamnă
+                coerență, personalitate și o imagine care rămâne în mintea
+                oamenilor. Exact asta construim împreună.
               </p>
               <div className="mt-10">
                 <Button
@@ -56,7 +82,7 @@ export default function BrandingPage() {
                   asChild
                 >
                   <Link href="/contact">
-                    Hai să construim brandul tău
+                    Vreau un brand puternic
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

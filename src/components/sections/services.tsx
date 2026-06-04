@@ -6,7 +6,7 @@ const SERVICES = [
   {
     title: "Branding & Identitate",
     description:
-      "Construim identități vizuale coerente care te diferențiază și comunică profesionalism.",
+      "Logo, paletă cromatică, fonturi și reguli clare — construim de la zero identitatea vizuală a business-ului tău.",
     href: "/branding",
     Icon: Palette,
     gradient: "from-vanta-cyan/20 to-vanta-purple/20",
@@ -15,7 +15,7 @@ const SERVICES = [
   {
     title: "Graphic Design",
     description:
-      "Materiale grafice pentru digital și print, adaptate imaginii și nevoilor business-ului tău.",
+      "Flyere, afișe, bannere, meniuri, packaging — orice material grafic de care ai nevoie, pregătit pentru print sau social media.",
     href: "/graphic-design",
     Icon: Layout,
     gradient: "from-vanta-purple/20 to-vanta-cyan/20",
@@ -24,7 +24,7 @@ const SERVICES = [
   {
     title: "Web Design",
     description:
-      "Website-uri moderne, rapide și optimizate pentru o imagine profesionistă online.",
+      "Site-uri rapide, plăcute și făcute să convertească vizitatori în clienți. Fiecare detaliu contează.",
     href: "/web-design",
     Icon: Globe,
     gradient: "from-vanta-cyan/20 to-vanta-purple/20",
@@ -33,19 +33,12 @@ const SERVICES = [
   {
     title: "Motion & Video",
     description:
-      "Conținut video modern pentru social media, advertising și prezentare digitală.",
+      "Reels, motion graphics, ads video și conținut scurt care oprește scroll-ul și transmite exact ce trebuie.",
     href: "/motion-video",
     Icon: Clapperboard,
     gradient: "from-vanta-purple/20 to-vanta-cyan/20",
     iconColor: "text-vanta-purple",
   },
-];
-
-const HIGHLIGHTS = [
-  "branding & identitate vizuală",
-  "graphic design",
-  "web design",
-  "motion & video",
 ];
 
 export function ServicesSection() {
@@ -62,9 +55,9 @@ export function ServicesSection() {
               <div className="accent-line" />
             </div>
             <p className="text-vanta-light/60 mx-auto mt-4 max-w-2xl text-base leading-relaxed">
-              Oferim servicii complete de comunicare vizuală — de la strategie
-              de brand și identitate vizuală, până la materiale gata de print și
-              prezență digitală.
+              De la strategia de brand și logo până la website-ul și materialele
+              tale printate — tot ce ai nevoie pentru o imagine profesionistă,
+              într-un singur loc.
             </p>
           </div>
         </FadeInView>
@@ -96,16 +89,9 @@ export function ServicesSection() {
 
         <FadeInView direction="up" delay={0.4}>
           <p className="text-vanta-light/40 mt-12 text-center text-sm leading-relaxed">
-            Serviciile noastre sunt orientate atât spre mediul digital, cât și
-            spre materiale pregătite profesional pentru producție tipografică.
-            &mdash;{" "}
-            {HIGHLIGHTS.map((h, i) => (
-              <span key={h}>
-                {i > 0 && ", "}
-                <span className="text-vanta-cyan/60">{h}</span>
-              </span>
-            ))}
-            .
+            Toate serviciile noastre sunt gândite atât pentru mediul digital,
+            cât și pentru print. Fiecare material este livrat în formatele de
+            care ai nevoie, fără bătăi de cap.
           </p>
         </FadeInView>
       </div>

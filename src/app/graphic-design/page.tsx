@@ -3,11 +3,22 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema, serviceSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Graphic Design",
+  title: "Graphic Design pentru Digital și Print",
   description:
-    "Servicii de graphic design pentru digital și print. Flyere, afișe, bannere, packaging, reclame digitale și materiale promoționale.",
+    "Servicii de graphic design în Bacău: flyere, afișe, bannere, meniuri, packaging și reclame digitale. Materiale profesioniste, gata de print sau pentru online.",
+  openGraph: {
+    title: "Graphic Design pentru Digital și Print | VANTA Studio",
+    description:
+      "Servicii de graphic design: flyere, afișe, bannere, meniuri, packaging și materiale pentru social media. Livrăm gata de print sau pentru ecran.",
+    url: "https://vantastudio.ro/graphic-design",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/graphic-design",
+  },
 };
 
 const COLOR_SWATCHES = [
@@ -36,8 +47,22 @@ const STATS = [
 ] as const;
 
 export default function GraphicDesignPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Servicii", url: "/servicii" },
+    { name: "Graphic Design", url: "/graphic-design" },
+  ]);
+
+  const schema = serviceSchema(
+    "Graphic Design",
+    "Servicii de graphic design pentru digital și print: flyere, afișe, bannere, packaging, reclame digitale și materiale promoționale.",
+    "/graphic-design",
+  );
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
+      <JsonLd data={schema} />
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <FadeInView direction="up">
@@ -48,10 +73,10 @@ export default function GraphicDesignPage() {
               </h1>
               <div className="accent-line" />
               <p className="text-vanta-light/80 mt-6 max-w-lg text-base leading-relaxed">
-                Realizăm materiale vizuale pentru online și producție
-                tipografică, adaptate imaginii și nevoilor fiecărui business.
-                Livrăm în formate optimizate atât pentru digital, cât și pentru
-                print.
+                De la un flyer bine făcut până la o campanie întreagă de
+                materiale print și digital — realizăm vizualuri care arată bine
+                indiferent de format. Toate fișierele sunt livrate gata de
+                folosit.
               </p>
               <div className="mt-10">
                 <Button
@@ -60,7 +85,7 @@ export default function GraphicDesignPage() {
                   asChild
                 >
                   <Link href="/contact">
-                    Hai să discutăm despre proiectul tău
+                    Vreau materiale profesioniste
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

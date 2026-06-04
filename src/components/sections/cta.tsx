@@ -15,8 +15,8 @@ export function CtaSection() {
             <div className="accent-line" />
           </div>
           <p className="text-vanta-light/60 mt-6 text-lg leading-relaxed">
-            Spune-ne ce ai nevoie și revenim cu o direcție clară pentru
-            proiectul tău.
+            Completează formularul și primești o ofertă personalizată în maxim
+            48h. Sau scrie-ne direct pe email — cum îți e mai ușor.
           </p>
           <div className="mt-8">
             <Button size="lg" asChild>

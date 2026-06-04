@@ -7,7 +7,8 @@ export const organizationSchema = {
   url: BASE_URL,
   email: "contact@vantastudio.ro",
   description:
-    "Studio creativ independent specializat în branding, graphic design și comunicare vizuală.",
+    "Studio creativ independent din Bacău specializat în branding, graphic design, web design și comunicare vizuală.",
+  foundingDate: "2022",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bacău",
@@ -25,6 +26,9 @@ export const localBusinessSchema = {
   name: "VANTA Studio",
   url: BASE_URL,
   image: `${BASE_URL}/og-image.jpg`,
+  telephone: "",
+  description:
+    "Studio creativ din Bacău specializat în branding, graphic design, web design și comunicare vizuală.",
   address: {
     "@type": "PostalAddress",
     addressLocality: "Bacău",
@@ -34,6 +38,7 @@ export const localBusinessSchema = {
     "@type": "Country",
     name: "România",
   },
+  priceRange: "$$",
 };
 
 export const websiteSchema = {
@@ -42,6 +47,45 @@ export const websiteSchema = {
   name: "VANTA Studio",
   url: BASE_URL,
 };
+
+export function serviceSchema(
+  name: string,
+  description: string,
+  url: string,
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    name,
+    description,
+    url: `${BASE_URL}${url}`,
+    provider: {
+      "@type": "Organization",
+      name: "VANTA Studio",
+    },
+    areaServed: {
+      "@type": "Country",
+      name: "RO",
+    },
+  };
+}
+
+export function faqPageSchema(
+  questions: { question: string; answer: string }[],
+) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: questions.map((q) => ({
+      "@type": "Question",
+      name: q.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: q.answer,
+      },
+    })),
+  };
+}
 
 export function breadcrumbSchema(items: { name: string; url: string }[]) {
   return {

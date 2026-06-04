@@ -3,11 +3,22 @@ import Link from "next/link";
 import { ArrowRight, Check } from "lucide-react";
 import { Button } from "~/components/ui/button";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema, serviceSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Web Design",
+  title: "Web Design și Dezvoltare Site-uri în Bacău",
   description:
-    "Website-uri moderne, rapide și optimizate. Web design responsive pentru business-uri care vor o imagine profesionistă online.",
+    "Web design modern în Bacău. Site-uri rapide, responsive și optimizate pentru conversie. Design personalizat, nu template-uri. Next.js, Tailwind CSS, performanță maximă.",
+  openGraph: {
+    title: "Web Design Modern | VANTA Studio",
+    description:
+      "Site-uri rapide, responsive și optimizate pentru conversie. Design personalizat cu Next.js și Tailwind CSS.",
+    url: "https://vantastudio.ro/web-design",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/web-design",
+  },
 };
 
 const COLOR_SWATCHES = [
@@ -36,8 +47,22 @@ const STATS = [
 ] as const;
 
 export default function WebDesignPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Servicii", url: "/servicii" },
+    { name: "Web Design", url: "/web-design" },
+  ]);
+
+  const schema = serviceSchema(
+    "Web Design Modern",
+    "Website-uri moderne, rapide și optimizate. Web design responsive pentru business-uri care vor o imagine profesionistă online.",
+    "/web-design",
+  );
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
+      <JsonLd data={schema} />
       <section className="relative mx-auto max-w-5xl overflow-hidden px-6 py-24">
         <div className="grid items-start gap-12 lg:grid-cols-2">
           <FadeInView direction="up">
@@ -48,8 +73,10 @@ export default function WebDesignPage() {
               </h1>
               <div className="accent-line" />
               <p className="text-vanta-light/80 mt-6 max-w-lg text-base leading-relaxed">
-                Creăm website-uri care arată excelent, se încarcă rapid și sunt
-                optimizate pentru a transforma vizitatorii în clienți.
+                Un site nu e doar o carte de vizită — e cel mai important canal
+                de vânzare. De aceea construim site-uri care arată bine, se
+                mișcă rapid și sunt gândite să convertească vizitatorii în
+                clienți reali.
               </p>
               <div className="mt-10">
                 <Button
@@ -58,7 +85,7 @@ export default function WebDesignPage() {
                   asChild
                 >
                   <Link href="/contact">
-                    Hai să construim website-ul tău
+                    Vreau un site profesionist
                     <ArrowRight className="ml-2 h-4 w-4" />
                   </Link>
                 </Button>

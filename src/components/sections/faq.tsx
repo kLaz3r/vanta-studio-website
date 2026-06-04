@@ -13,27 +13,37 @@ const FAQ_ITEMS = [
   {
     question: "Ce servicii oferă VANTA Studio?",
     answer:
-      "Oferim servicii de branding, graphic design, materiale publicitare, web design și conținut vizual pentru mediul digital.",
+      "Oferim branding (logo, identitate vizuală, ghid de brand), graphic design (flyere, afișe, bannere, meniuri, packaging), web design (site-uri moderne, rapide, optimizate) și conținut video (reels, motion graphics, reclame).",
   },
   {
     question: "Realizați și print?",
     answer:
-      "Nu realizăm producție tipografică internă, însă toate materialele sunt pregătite profesional pentru print și producție.",
+      "Nu facem producție tipografică internă, dar toate materialele sunt pregătite profesional pentru tipar — fișiere corect configurate, cu bleed, CMYK și crop marks. Le trimiți direct la tipografie.",
   },
   {
     question: "Lucrați doar cu firme din Bacău?",
     answer:
-      "Nu. Colaborăm atât local, cât și remote, cu business-uri din toată țara.",
+      "Deloc. Colaborăm cu business-uri din toată țara, fie remote, fie la fața locului dacă ești prin Bacău. Totul se poate rezolva online fără probleme.",
   },
   {
     question: "Cum începe colaborarea?",
     answer:
-      "Discutăm obiectivele proiectului, stabilim direcția creativă și revenim cu o ofertă personalizată.",
+      "Discutăm pe scurt ce ai nevoie, stabilim direcția creativă și îți trimitem o ofertă personalizată. Dacă ești de acord, începem treaba. Fără contracte complicate.",
   },
   {
     question: "Ce informații sunt necesare pentru ofertă?",
     answer:
-      "În funcție de proiect, avem nevoie de detalii precum: tipul business-ului, obiectivele proiectului, serviciile dorite, deadline estimativ, exemple vizuale preferate.",
+      "În funcție de ce ai nevoie, ajută să știm: ce tip de business ai, care sunt obiectivele proiectului, ce servicii te interesează, un deadline orientativ și, dacă ai, câteva exemple de vizualuri care îți plac.",
+  },
+  {
+    question: "Cât durează un proiect de branding?",
+    answer:
+      "Pentru un pachet complet de branding (logo, identitate vizuală, ghid de brand), în general lucrăm în 2-4 săptămâni. Un logo simplu poate fi gata și într-o săptămână.",
+  },
+  {
+    question: "Cât costă un website?",
+    answer:
+      "Depinde de complexitate. Un site de prezentare cu 3-5 pagini pornește de la prețuri accesibile, iar un site mai complex cu funcționalități custom se discută individual. Completează wizard-ul și îți dăm un răspuns exact.",
   },
 ];
 

@@ -10,11 +10,22 @@ import {
 } from "lucide-react";
 import { FadeInView } from "~/components/ui/fade-in-view";
 import { Button } from "~/components/ui/button";
+import { JsonLd } from "~/components/layout/json-ld";
+import { serviceSchema, breadcrumbSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Servicii",
+  title: "Servicii de Branding, Graphic Design și Web Design",
   description:
-    "Servicii de branding, graphic design, web design și comunicare vizuală pentru business-uri moderne. Materiale pregătite pentru digital și print.",
+    "Servicii complete de branding, graphic design, web design și conținut video în Bacău și online. Logo-uri, site-uri, materiale print și motion graphics — totul într-un singur loc.",
+  openGraph: {
+    title: "Servicii de Branding, Graphic Design și Web Design | VANTA Studio",
+    description:
+      "Servicii complete de branding, graphic design, web design și conținut video în Bacău și online.",
+    url: "https://vantastudio.ro/servicii",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/servicii",
+  },
 };
 
 const SERVICE_BLOCKS = [
@@ -24,14 +35,62 @@ const SERVICE_BLOCKS = [
     icon: Palette,
     iconGradient: "from-vanta-cyan/20 to-vanta-purple/20 text-vanta-cyan",
     description:
-      "Construim identități vizuale moderne și sisteme de brand coerente care ajută business-urile să comunice clar și memorabil.",
+      "Construim identități care spun clar cine ești. Logo, paletă, fonturi și ghid de brand — totul gândit să funcționeze împreună, oriunde l-ai folosi.",
     deliverables: [
-      "Logo Design",
-      "Identitate Vizuală",
-      "Brand Guidelines",
-      "Direcție Vizuală",
-      "Sisteme Tipografice",
-      "Social Media Identity",
+      "Logo principal + variante",
+      "Paletă cromatică și tipografie",
+      "Ghid de brand (Brand Guidelines)",
+      "Template-uri pentru Social Media",
+      "Sistem vizual complet",
+    ],
+  },
+  {
+    title: "Graphic Design pentru Digital și Print",
+    href: "/graphic-design",
+    icon: Layout,
+    iconGradient: "from-vanta-purple/20 to-vanta-cyan/20 text-vanta-purple",
+    description:
+      "Orice material grafic de care ai nevoie — de la un flyer sau un meniu până la bannere, reclame și packaging. Livrăm gata de print sau optimizat pentru ecran.",
+    deliverables: [
+      "Flyere și pliante",
+      "Meniuri și cataloage",
+      "Afișe și bannere",
+      "Packaging și etichete",
+      "Visual-uri pentru Social Media",
+      "Reclame digitale",
+      "Materiale promoționale",
+      "Prezentări și pitch deck-uri",
+    ],
+  },
+  {
+    title: "Web Design Modern",
+    href: "/web-design",
+    icon: Globe,
+    iconGradient: "from-vanta-cyan/20 to-vanta-purple/20 text-vanta-cyan",
+    description:
+      "Site-uri care arată bine, se încarcă rapid și sunt optimizate să aducă clienți. Design personalizat, nu template-uri.",
+    deliverables: [
+      "Design unic, pe măsura ta",
+      "Optimizat pentru viteză",
+      "Total responsive (mobile, tablet, desktop)",
+      "Navigație clară și intuitivă",
+      "SEO de bază inclus",
+    ],
+  },
+  {
+    title: "Motion Design & Video Editing",
+    href: "/motion-video",
+    icon: Clapperboard,
+    iconGradient: "from-vanta-purple/20 to-vanta-cyan/20 text-vanta-purple",
+    description:
+      "Reels, motion graphics și videouri pentru campanii care opresc scrolling-ul. Conținut scurt, eficient, gata de postat.",
+    deliverables: [
+      "Reels și Shorts",
+      "Motion Graphics",
+      "Videouri pentru reclame",
+      "Intro-uri și animații",
+      "Conținut scurt (TikTok, Reels)",
+      "Editare video și post-producție",
     ],
   },
   {
@@ -86,8 +145,22 @@ const SERVICE_BLOCKS = [
 ];
 
 export default function ServicesPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Servicii", url: "/servicii" },
+  ]);
+
+  const serviceSchemas = SERVICE_BLOCKS.map((s) =>
+    serviceSchema(s.title, s.description, s.href),
+  );
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
+      {serviceSchemas.map((s) => (
+        <JsonLd key={(s as { url: string }).url} data={s} />
+      ))}
+
       {/* Intro */}
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
         <FadeInView direction="up">
@@ -100,14 +173,14 @@ export default function ServicesPage() {
               <div className="accent-line" />
             </div>
             <p className="text-vanta-light/80 mx-auto mt-6 max-w-2xl text-base leading-relaxed">
-              VANTA Studio dezvoltă identități vizuale și materiale creative
-              pentru business-uri care vor o imagine modernă și profesionistă.
-              Lucrăm atât pentru mediul digital, cât și pentru materiale
-              pregătite profesional pentru print și producție.
+              Oferim tot ce ține de identitate vizuală și comunicare: de la
+              logo și reguli de brand până la website, materiale printate și
+              conținut pentru social media. Colaborăm cu business-uri din
+              România, indiferent de oraș.
             </p>
             <p className="text-vanta-light/50 mx-auto mt-6 max-w-xl text-sm">
-              Peste 30 de identități vizuale livrate — pentru startup-uri,
-              companii tech și branduri premium.
+              Peste 50 de proiecte livrate — pentru startup-uri, companii tech,
+              restaurante și branduri locale.
             </p>
           </div>
         </FadeInView>

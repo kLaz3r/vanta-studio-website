@@ -2,16 +2,52 @@ import type { Metadata } from "next";
 import { FaqSection } from "~/components/sections/faq";
 import { WizardContainer } from "~/components/forms/quote-wizard/wizard-container";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema, faqPageSchema } from "~/lib/structured-data";
 
 export const metadata: Metadata = {
-  title: "Contact",
+  title: "Contact — Solicită o Ofertă Personalizată",
   description:
-    "Solicită o ofertă personalizată pentru branding, graphic design și comunicare vizuală. Completează wizard-ul rapid și primești un email pre-completat.",
+    "Contactează VANTA Studio pentru o ofertă personalizată de branding, graphic design, web design sau conținut video. Completează wizard-ul rapid și primești un email pre-completat.",
+  openGraph: {
+    title: "Contact — Solicită o Ofertă Personalizată | VANTA Studio",
+    description:
+      "Contactează VANTA Studio pentru o ofertă personalizată de branding, graphic design, web design sau conținut video.",
+    url: "https://vantastudio.ro/contact",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/contact",
+  },
 };
 
 export default function ContactPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Contact", url: "/contact" },
+  ]);
+
+  const faqSchema = faqPageSchema([
+    {
+      question: "Ce servicii oferă VANTA Studio?",
+      answer:
+        "Oferim servicii de branding, graphic design, materiale publicitare, web design și conținut vizual pentru mediul digital.",
+    },
+    {
+      question: "Realizați și print?",
+      answer:
+        "Nu realizăm producție tipografică internă, însă toate materialele sunt pregătite profesional pentru print și producție.",
+    },
+    {
+      question: "Lucrați doar cu firme din Bacău?",
+      answer:
+        "Nu. Colaborăm atât local, cât și remote, cu business-uri din toată țara.",
+    },
+  ]);
+
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
+      <JsonLd data={faqSchema} />
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 pt-16 pb-12 text-center">
         <FadeInView direction="up">
           <div className="relative">

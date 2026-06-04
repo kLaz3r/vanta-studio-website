@@ -1,12 +1,23 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { FadeInView } from "~/components/ui/fade-in-view";
+import { JsonLd } from "~/components/layout/json-ld";
+import { breadcrumbSchema } from "~/lib/structured-data";
 import { getPostsFrontmatter } from "~/lib/blog";
 
 export const metadata: Metadata = {
-  title: "Blog",
+  title: "Blog — Branding, Design și Comunicare Vizuală",
   description:
-    "Articole despre branding, graphic design, web design și identitate vizuală. Resurse pentru business-uri moderne.",
+    "Resurse și articole utile despre branding, graphic design, web design și identitate vizuală. Sfaturi practice pentru business-uri care vor o imagine mai bună.",
+  openGraph: {
+    title: "Blog — Branding, Design și Comunicare Vizuală | VANTA Studio",
+    description:
+      "Resurse și articole utile despre branding, graphic design, web design și identitate vizuală.",
+    url: "https://vantastudio.ro/blog",
+  },
+  alternates: {
+    canonical: "https://vantastudio.ro/blog",
+  },
 };
 
 const CATEGORY_COLORS: Record<string, string> = {
@@ -22,10 +33,15 @@ const GRADIENTS = [
 ];
 
 export default function BlogPage() {
+  const breadcrumb = breadcrumbSchema([
+    { name: "Acasă", url: "/" },
+    { name: "Blog", url: "/blog" },
+  ]);
   const posts = getPostsFrontmatter();
 
   return (
     <div className="pt-20">
+      <JsonLd data={breadcrumb} />
       <section className="relative mx-auto max-w-4xl overflow-hidden px-6 py-24 text-center">
         <FadeInView direction="up">
           <div className="relative">
@@ -36,8 +52,10 @@ export default function BlogPage() {
               <div className="accent-line" />
             </div>
             <p className="text-vanta-light/60 mx-auto mt-6 max-w-xl text-base leading-relaxed">
-              Resurse și articole despre branding, graphic design, web design și
-              comunicare vizuală pentru business-uri moderne.
+              Resurse practice, sfaturi și articole despre branding, graphic
+              design, web design și comunicare vizuală — gândite pentru
+              business-uri care vor să înțeleagă mai bine cum funcționează
+              designul.
             </p>
           </div>
         </FadeInView>
