@@ -1,6 +1,7 @@
 /** @type {import('next-sitemap').IConfig} */
 const config = {
   siteUrl: "https://vantastudio.ro",
+  outDir: "out",
   generateRobotsTxt: true,
   generateIndexSitemap: false,
   exclude: [],
